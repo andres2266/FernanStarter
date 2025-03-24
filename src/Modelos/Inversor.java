@@ -1,9 +1,13 @@
 package Modelos;
 
+import Ivercion.Inversion;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Inversor extends Usuario {
 
+    ArrayList<Inversion>inversiones;
     private int cartera ;
     private ArrayList<Amigo> amigos;
     private boolean usuarioBloqueado;
@@ -42,5 +46,11 @@ public class Inversor extends Usuario {
     public void setUsuarioBloqueado(boolean usuarioBloqueado) {
         this.usuarioBloqueado = usuarioBloqueado;
     }
+
+    public void invertir(Proyecto Proyecto, float cantidad, LocalDate fechaDeInvercion){
+        Inversion inversion = new Inversion(Proyecto,cantidad,fechaDeInvercion);
+        inversiones.add(inversion);
+    }
+
 }
 

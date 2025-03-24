@@ -7,8 +7,8 @@ public class Proyecto {
     private String nombre;
     private String descripcion;
     private Categoria categoria;
-    private int cantidadNecesaria;
-    private int cantidadFinanciada;
+    private float cantidadNecesaria;
+    private float cantidadFinanciada;
     private LocalDate fechaDeApertura;
     private LocalDate fechaDeFin;
     private float recompensas;
