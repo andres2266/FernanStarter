@@ -1,10 +1,11 @@
 package MoldelosGestores;
 
 
-import Modelos.Proyecto;
-import Modelos.Usuario;
+import Modelos.Gestor;
+import Modelos.Inversor;
+import Modelos.Proyecto;import Modelos.Usuario;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 
 public class GestorDeUsuarios {
@@ -43,6 +44,17 @@ public class GestorDeUsuarios {
             gestorDeUsuarios.put(id, usuaio);
             return true;
         }
+    }
+
+    public Inversor verMetodosDeInversor(Usuario usuario){
+        Inversor inversor = (Inversor) usuario;
+        return inversor;
+    }
+
+
+    public Gestor verMetodosDeGestor(Usuario usuario){
+        Gestor gestor = (Gestor) usuario;
+        return gestor;
     }
 
 

@@ -28,4 +28,40 @@ public class Proyecto {
     public String getId() {
         return id;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setCantidadNecesaria(float cantidadNecesaria) {
+        this.cantidadNecesaria = cantidadNecesaria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setCantidadFinanciada(float cantidadFinanciada) {
+        this.cantidadFinanciada = cantidadFinanciada;
+    }
+
+    public void setFechaDeApertura(LocalDate fechaDeApertura) {
+        this.fechaDeApertura = fechaDeApertura;
+    }
+
+    public void setFechaDeFin(LocalDate fechaDeFin) {
+        this.fechaDeFin = fechaDeFin;
+    }
+
+    public void setRecompensas(float recompensas) {
+        this.recompensas = recompensas;
+    }
 }

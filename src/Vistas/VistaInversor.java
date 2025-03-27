@@ -1,6 +1,7 @@
 package Vistas;
 
 import Ivercion.Inversion;
+import Modelos.Amigo;
 import Modelos.Proyecto;
 
 import java.util.ArrayList;
@@ -47,6 +48,32 @@ public class VistaInversor implements Credenciales {
 
     public void verCarteraDeInversor(float cartera){
         System.out.println(cartera);
+    }
+
+    public void mensajeCreditoAñadido(int cantidadAñadida){
+        System.out.println(" Se añadio a la cartera " + cantidadAñadida + " Creditos ");
+    }
+
+    public void mensajeAmigos(String nombre){
+        System.out.println(" Los amigos del inversor " + nombre);
+    }
+
+    public void mensajeAmigoAñadido(){
+        System.out.println("El nuevo amigo fue agregado");
+    }
+
+    public void verAmigosDeGestor(ArrayList<Amigo> amigos){
+        for (int i = 0; i <amigos.size() ; i++) {
+            System.out.println(amigos.get(i));
+        }
+    }
+
+    public void mensajeCambioDeUsusaio(){
+        System.out.println("El nombre del Inversor fue modificado" );
+    }
+
+    public void mensajeDeCabioDeContraseña(){
+        System.out.println("La contraseña del Inversor fue modificada");
     }
 
     public void opcinesDelInversor() {

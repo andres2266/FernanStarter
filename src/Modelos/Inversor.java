@@ -25,7 +25,7 @@ public class Inversor extends Usuario {
         setSecion(false);
     }
 
-    public void añadirSaldo(int saldo) {
+    public void añadirSaldoACartera(int saldo) {
         this.cartera += saldo;
     }
 
@@ -47,6 +47,10 @@ public class Inversor extends Usuario {
 
     public void setUsuarioBloqueado(boolean usuarioBloqueado) {
         this.usuarioBloqueado = usuarioBloqueado;
+    }
+
+    public ArrayList<Amigo> verListaDeAmigos(){
+        return amigos;
     }
 
     public void invertir(Proyecto Proyecto, float cantidad, LocalDate fechaDeInvercion){
