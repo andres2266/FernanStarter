@@ -53,17 +53,17 @@ public class Inversor extends Usuario {
         return amigos;
     }
 
-    public void invertir(Proyecto Proyecto, float cantidad, LocalDate fechaDeInvercion){
-        Inversion inversion = new Inversion(Proyecto,cantidad,fechaDeInvercion);
+    public void invertir(Proyecto proyecto, float cantidad, LocalDate fechaDeInversion){
+        Inversion inversion = new Inversion(proyecto,cantidad, fechaDeInversion);
         inversiones.add(inversion);
-        proyectosInvertidos.add(Proyecto);
+        proyectosInvertidos.add(proyecto);
     }
 
     public ArrayList<Proyecto> mostrarArrayDeProyectosInvertidos(){
         return proyectosInvertidos;
     }
 
-   public ArrayList<Inversion>motrarArrayDeInverciones(){
+   public ArrayList<Inversion> motrarArrayDeInversiones(){
         return inversiones;
    }
 

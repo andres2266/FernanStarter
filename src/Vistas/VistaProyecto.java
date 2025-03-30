@@ -9,4 +9,7 @@ public class VistaProyecto {
     public void fechaDeInicio(){System.out.println("Escibe la fecha de inicio de del proyecto");}
     public void fechaFinal(){System.out.println("Escribe la fecha donde termina el proyecto");}
     public void recompensas(){System.out.println("Escribe las recompensas");}
+    public void mensajeUsuarioInvertido(){
+        System.out.println("Inversión realizada con exito.");
+    }
 }

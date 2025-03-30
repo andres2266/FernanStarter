@@ -5,8 +5,10 @@ import Modelos.Amigo;
 import Modelos.Proyecto;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class VistaInversor implements Credenciales {
+    Scanner S = new Scanner(System.in);
     @Override
     public void PedirContraseña() {
         System.out.println("Por favor introdusca su contraseña");
@@ -80,7 +82,7 @@ public class VistaInversor implements Credenciales {
         System.out.println("el id proporcido no es valido");
     }
 
-    public String inicioDeSecionCodigo(){
+    public String inicioDeSesionCodigo(){
         System.out.println("ingrese el codigo de verificacion");
         String codigo = S.nextLine();
         return codigo;
