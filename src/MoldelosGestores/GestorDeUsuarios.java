@@ -46,14 +46,20 @@ public class GestorDeUsuarios {
     }
 
     public Inversor verMetodosDeInversor(Usuario usuario){
-        Inversor inversor = (Inversor) usuario;
-        return inversor;
+        if(usuario.getClass().getSimpleName().equals("Inversor")) {
+            Inversor inversor = (Inversor) usuario;
+            return inversor;
+        }
+        return null;
     }
 
 
     public Gestor verMetodosDeGestor(Usuario usuario){
-        Gestor gestor = (Gestor) usuario;
-        return gestor;
+        if(usuario.getClass().getSimpleName().equals("Gestor")) {
+            Gestor gestor = (Gestor) usuario;
+            return gestor;
+        }
+        return null;
     }
 
 

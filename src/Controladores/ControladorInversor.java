@@ -20,59 +20,72 @@ public class ControladorInversor {
         this.vistaInversor = vistaInversor;
     }
 
-    public void misInversiones(String id) {
-        vistaInversor.textoParaMostrarInversiones(gestorDeUsuarios.buscarUsuario(id).getNombre());
-        vistaInversor.mostrarInverciones(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(id)).motrarArrayDeInversiones());
+    public void misInversiones(String nombreDeUsuario) {
+        vistaInversor.textoParaMostrarInversiones(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
+        vistaInversor.mostrarInverciones(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).motrarArrayDeInversiones());
     }
 
-    public void proyectos(String id) {
-        vistaInversor.textoParaMostrarProyectos(gestorDeUsuarios.buscarUsuario(id).getNombre());
-        vistaInversor.mostrarProyectos(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(id)).mostrarArrayDeProyectosInvertidos());
+    public void proyectos(String nombreDeUsuario) {
+        vistaInversor.textoParaMostrarProyectos(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
+        vistaInversor.mostrarProyectos(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).mostrarArrayDeProyectosInvertidos());
     }
 
-    public void verCartera(String id) {
-        vistaInversor.textoParaCartera(gestorDeUsuarios.buscarUsuario(id).getNombre());
-        vistaInversor.verCarteraDeInversor(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(id)).verCatera());
+    public void verCartera(String nombreDeUsuario) {
+        vistaInversor.textoParaCartera(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
+        vistaInversor.verCarteraDeInversor(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verCatera());
     }
 
-    public void añadirCreditoAcartera(int creditoAñadido, String id) {
+    public void añadirCreditoAcartera(int creditoAñadido, String nombreDeUsuario) {
+       if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
+           vistaInversor.mensajeUsuarioNoEncontrado();
+       }
+        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).añadirSaldoACartera(creditoAñadido);
         vistaInversor.mensajeCreditoAñadido(creditoAñadido);
-        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(id)).añadirSaldoACartera(creditoAñadido);
     }
 
-    public void mostrarAmigosDelIversor(String id) {
-        vistaInversor.mensajeAmigos(gestorDeUsuarios.buscarUsuario(id).getNombre());
-        vistaInversor.verAmigosDeGestor(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(id)).verListaDeAmigos());
+    public void mostrarAmigosDelIversor(String nombreDeUsuairo) {
+        vistaInversor.mensajeAmigos(gestorDeUsuarios.buscarUsuario(nombreDeUsuairo).getNombre());
+        vistaInversor.verAmigosDeGestor(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuairo)).verListaDeAmigos());
     }
 
-    public void añadirAmigoDeInversor(Amigo amigo, String id) {
-        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(id)).añadirAmigo(amigo);
+    public void añadirAmigoDeInversor(Amigo amigo, String nombreDeUsuario) {
+        if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
+            vistaInversor.mensajeUsuarioNoEncontrado();
+        }
+        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).añadirAmigo(amigo);
         vistaInversor.mensajeAmigoAñadido();
     }
 
-    public void cambiarNombreDeInversor(String nombre, String id) {
-        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(id)).cambioDeUsusario(nombre);
+    public void cambiarNombreDeInversor(String nombre, String nombreDeUsuario) {
+        if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
+            vistaInversor.mensajeUsuarioNoEncontrado();
+        }
+        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).cambioDeUsusario(nombre);
         vistaInversor.mensajeCambioDeUsusaio();
     }
 
-    public void cambioDeContraseñaDeInversor(String contraseña, String id) {
-        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(id)).cambioDeContraseña(contraseña);
+    public void cambioDeContraseñaDeInversor(String contraseña, String nombreDeUsuario) {
+        if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
+            vistaInversor.mensajeUsuarioNoEncontrado();
+        }
+        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).cambioDeContraseña(contraseña);
         vistaInversor.mensajeDeCabioDeContraseña();
     }
 
-    public void inicioDeSecionAdmin(String id, String contraseña) {
-        if (gestorDeUsuarios.buscarUsuario(id) == null) {
+    public void inicioDeSecionAdmin(String nombreDeUsuario, String contraseña) {
+        if (gestorDeUsuarios.buscarUsuario(nombreDeUsuario) == null) {
             vistaInversor.idNoValido();
-        } else if (gestorDeUsuarios.buscarUsuario(id).getContraseña().equals(contraseña)) {
-            FuncionesDeCorreo codigo = new FuncionesDeCorreo(gestorDeUsuarios.buscarUsuario(id).getCorreo());
+        } else if (gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getContraseña().equals(contraseña)) {
+            FuncionesDeCorreo codigo = new FuncionesDeCorreo(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getCorreo());
             if (codigo.getCodigoDeCorreo().equals(vistaInversor.inicioDeSesionCodigo())) {
                 vistaInversor.saludarUsuario();
             }
         }
     }
-    public void invertir(Usuario usuarioInversor, String nombreUsuario, Proyecto proyecto, float cantidad, LocalDate fechaDeInversion){
-        if(usuarioInversor.getClass().getSimpleName().equals("Inversor")){
-            gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreUsuario)).invertir(proyecto, cantidad, fechaDeInversion);
+    public void invertir(Usuario usuarioInversor, String nombreDeUsuario, Proyecto proyecto, float cantidad, LocalDate fechaDeInversion){
+        if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
+            vistaInversor.mensajeUsuarioNoEncontrado();
         }
+        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).invertir(proyecto, cantidad, fechaDeInversion);
     }
 }

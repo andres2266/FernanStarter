@@ -88,6 +88,10 @@ public class VistaInversor implements Credenciales {
         return codigo;
     }
 
+    public void mensajeUsuarioNoEncontrado(){
+        System.out.println("El usuario no ha sido enontrado");
+    }
+
     public void opcinesDelInversor() {
         System.out.println("1: Mis Inversiones");
         System.out.println("2: Proyectos");

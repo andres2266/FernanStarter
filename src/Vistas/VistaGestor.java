@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class VistaGestor implements Credenciales {
     Scanner S = new Scanner(System.in);
 
-    public void inicioDeSecion(){System.out.println("Ingrese su id");}
 
     public void idNoValido(){System.out.println("el id proporcido no es valido");}
 
@@ -76,8 +75,9 @@ public class VistaGestor implements Credenciales {
         System.out.println("La fecha de fin fue cambiada");
     }
 
+    public void mensajeProyectoCreado(){System.out.println("El proyecto fue creado");}
 
-
+    public void mensajeUsuarioNoEncontrado(){System.out.println("El usuario no ha sido enontrado");}
 
 
 

@@ -13,7 +13,7 @@ public class Proyecto implements Inversible {
     private LocalDate fechaDeApertura;
     private LocalDate fechaDeFin;
     private float recompensas;
-    ArrayList<Usuario> UsuariosQueHanInvertido;
+
 
     public Proyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, float recompensas, LocalDate fechaDeFin,String id) {
         this.nombre = nombre;
@@ -25,7 +25,6 @@ public class Proyecto implements Inversible {
         this.recompensas = recompensas;
         this.fechaDeFin = fechaDeFin;
         this.id = id;
-        UsuariosQueHanInvertido = new ArrayList<>();
     }
 
     public String getId() {
@@ -72,11 +71,7 @@ public class Proyecto implements Inversible {
         return nombre;
     }
 
-    public void añadirUsuarioInversor(Usuario usuarioInversor){
-        if(usuarioInversor.getClass().getSimpleName().equals("Inversor")){
-            UsuariosQueHanInvertido.add(usuarioInversor);
-        }
-    }
+
 
 
 

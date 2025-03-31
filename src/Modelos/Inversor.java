@@ -54,9 +54,7 @@ public class Inversor extends Usuario {
     }
 
     public void invertir(Proyecto proyecto, float cantidad, LocalDate fechaDeInversion){
-        Inversion inversion = new Inversion(proyecto,cantidad, fechaDeInversion);
-        inversiones.add(inversion);
-        proyectosInvertidos.add(proyecto);
+      //modificar hacerlo en el controlador
     }
 
     public ArrayList<Proyecto> mostrarArrayDeProyectosInvertidos(){

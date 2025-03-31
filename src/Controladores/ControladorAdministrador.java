@@ -13,40 +13,40 @@ public class ControladorAdministrador {
         this.vistaAdministrador = vistaAdministrador;
     }
 
-    public void cambiarContraseñaAdministrdor(String contraseña, String id) {
-        gestorDeUsuarios.buscarUsuario(id).setContraseña(contraseña);
+    public void cambiarContraseñaAdministrdor(String contraseña, String  nombreDeUsuario) {
+        gestorDeUsuarios.buscarUsuario(nombreDeUsuario).setContraseña(contraseña);
         vistaAdministrador.cambioDeContraseña();
     }
 
 
-    public void cambiarUsuarioDeAdministrador(String nombreDeUsuario, String id) {
-        gestorDeUsuarios.buscarUsuario(id).setNombre(nombreDeUsuario);
+    public void cambiarUsuarioDeAdministrador(String nombreDeUsuario, String  nombreDeUsuariod) {
+        gestorDeUsuarios.buscarUsuario(nombreDeUsuario).setNombre(nombreDeUsuario);
         vistaAdministrador.cambioDeUsuario();
     }
 
 
-    public void cerrarCecionDeAdmin(String nombreDeUsuario, String id) {
-        gestorDeUsuarios.buscarUsuario(id).cerrarSecion();
+    public void cerrarCecionDeAdmin(String  nombreDeUsuario) {
+        gestorDeUsuarios.buscarUsuario( nombreDeUsuario).cerrarSecion();
     }
 
 
-    public void desbloquearUsuario(String id) {
-        gestorDeUsuarios.buscarUsuario(id).setSecion(false);
+    public void desbloquearUsuario(String  nombreDeUsuario) {
+        gestorDeUsuarios.buscarUsuario( nombreDeUsuario).setSecion(false);
         vistaAdministrador.usuarioDesbloqueado();
     }
 
 
-    public void bloquearUsuario(String id) {
-        gestorDeUsuarios.buscarUsuario(id).setSecion(true);
+    public void bloquearUsuario(String  nombreDeUsuario) {
+        gestorDeUsuarios.buscarUsuario( nombreDeUsuario).setSecion(true);
         vistaAdministrador.usuarioBloqueado();
     }
 
 
-    public void inicioDeSecionAdmin(String id, String contraseña) {
-        if (gestorDeUsuarios.buscarUsuario(id) == null) {
+    public void inicioDeSecionAdmin(String  nombreDeUsuario, String contraseña) {
+        if (gestorDeUsuarios.buscarUsuario( nombreDeUsuario) == null) {
             vistaAdministrador.idNoValido();
-        } else if (gestorDeUsuarios.buscarUsuario(id).getContraseña().equals(contraseña)) {
-            FuncionesDeCorreo codigo = new FuncionesDeCorreo(gestorDeUsuarios.buscarUsuario(id).getCorreo());
+        } else if (gestorDeUsuarios.buscarUsuario( nombreDeUsuario).getContraseña().equals(contraseña)) {
+            FuncionesDeCorreo codigo = new FuncionesDeCorreo(gestorDeUsuarios.buscarUsuario( nombreDeUsuario).getCorreo());
             if(codigo.getCodigoDeCorreo().equals(vistaAdministrador.inicioDeSecionCodigo())){
                 vistaAdministrador.saludarUsuario();
             }
