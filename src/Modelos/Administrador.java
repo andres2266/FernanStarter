@@ -2,8 +2,8 @@ package Modelos;
 
 public class Administrador extends Usuario{
 
-    public Administrador(String nombre, String contraseña, String correo,String id) {
-        super(nombre, contraseña, correo,id);
+    public Administrador(String nombre , String correo, String contraseña) {
+        super(nombre, correo,contraseña);
     }
 
     public boolean cambioDeContraseña(String nuevaContraseña ){
@@ -18,7 +18,7 @@ public class Administrador extends Usuario{
 
     @Override
     public void cerrarSecion() {
-       super.setSecion(false);
+       super.setBloqueado(false);
     }
 
     public boolean bloquearUsuario(Usuario usuario){

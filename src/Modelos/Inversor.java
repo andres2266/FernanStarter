@@ -2,32 +2,35 @@ package Modelos;
 
 import Ivercion.Inversion;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Inversor extends Usuario {
-
-    private ArrayList<Inversion>inversiones;
-    private ArrayList<Proyecto> proyectosInvertidos;
+    private ArrayList<Inversion>inversionesRealizadas;
     private int cartera ;
     private ArrayList<Amigo> amigos;
     private boolean usuarioBloqueado;
 
-    public Inversor(String nombre, String contraseña, String correo, boolean secion, int cartera,String id) {
-        super(nombre, contraseña, correo,id);
+    public Inversor(String nombre, String correo, String contraseña,int cartera) {
+        super(nombre, correo, contraseña);
         this.cartera = cartera;
         usuarioBloqueado = false;
-        proyectosInvertidos = new ArrayList<>();
+        inversionesRealizadas = new ArrayList<>();
     }
 
     @Override
     public void cerrarSecion() {
-        setSecion(false);
+        setBloqueado(false);
     }
 
     public void añadirSaldoACartera(int saldo) {
         this.cartera += saldo;
     }
+
+    public void restarSaldoACartera(int saldo) {
+        this.cartera -= saldo;
+    }
+
+
 
     public int verCatera() {
         return cartera;
@@ -53,19 +56,13 @@ public class Inversor extends Usuario {
         return amigos;
     }
 
-    public void invertir(Proyecto proyecto, float cantidad, LocalDate fechaDeInversion){
-      //modificar hacerlo en el controlador
+    public ArrayList<Inversion> mostrarListaDeInversiones(){
+        return inversionesRealizadas;
     }
 
-    public ArrayList<Proyecto> mostrarArrayDeProyectosInvertidos(){
-        return proyectosInvertidos;
+    public void invertir(Inversion inversion){
+        inversionesRealizadas.add(inversion);
     }
-
-   public ArrayList<Inversion> motrarArrayDeInversiones(){
-        return inversiones;
-   }
-
-
 
 
 }

@@ -45,4 +45,8 @@ public class GestorDeProyecto {
         return false;
     }
 
+    public ArrayList<Proyecto> verTodosLosProyectos(){
+        return gestorProyecto;
+    }
+
 }

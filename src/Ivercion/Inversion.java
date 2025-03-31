@@ -17,4 +17,26 @@ public class Inversion {
         this.fechaDeInversion = fechaDeInvercion;
         this.inversor = inversor;
     }
+
+    public float getCantidadInvertida() {
+        return cantidadInvertida;
+    }
+
+    public Proyecto getProyecto1() {
+        return proyecto1;
+    }
+
+    public Inversor getInversor() {
+        return inversor;
+    }
+
+    @Override
+    public String toString() {
+        return "Inversion{" +
+                "proyecto=" + proyecto1 +
+                ", cantidadInvertida=" + cantidadInvertida +
+                ", fechaDeInversion=" + fechaDeInversion +
+                ", inversor=" + inversor +
+                '}';
+    }
 }

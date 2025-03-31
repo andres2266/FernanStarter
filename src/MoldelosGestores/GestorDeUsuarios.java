@@ -3,14 +3,14 @@ package MoldelosGestores;
 
 import Modelos.Gestor;
 import Modelos.Inversor;
-import Modelos.Proyecto;import Modelos.Usuario;
+import Modelos.Usuario;
 
 
 import java.util.HashMap;
 
 public class GestorDeUsuarios {
 
-    private HashMap<String, Usuario> gestorDeUsuarios = new HashMap<>();
+    private HashMap<String, Usuario> gestorDeUsuarios;
     private static int usuariosInsertados = 0;
 
     public GestorDeUsuarios() {
@@ -18,7 +18,7 @@ public class GestorDeUsuarios {
     }
 
     public void agregarUsuarios(Usuario usuario) {
-        gestorDeUsuarios.put(usuario.getId(), usuario);
+        gestorDeUsuarios.put(usuario.getNombre(), usuario);
         usuariosInsertados++;
     }
 
@@ -38,7 +38,6 @@ public class GestorDeUsuarios {
     public boolean modificarUsuaio(Usuario usuaio, String id) {
         if (gestorDeUsuarios.get(id) == null) {
             return false;
-
         } else {
             gestorDeUsuarios.put(id, usuaio);
             return true;
@@ -62,5 +61,8 @@ public class GestorDeUsuarios {
         return null;
     }
 
-
+    @Override
+    public String toString() {
+        return "usuarios" + gestorDeUsuarios;
+    }
 }

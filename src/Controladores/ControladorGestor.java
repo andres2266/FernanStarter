@@ -2,7 +2,9 @@ package Controladores;
 
 import FuncionesDeCorreo.FuncionesDeCorreo;
 import Modelos.Categoria;
+import Modelos.Gestor;
 import Modelos.Proyecto;
+import Modelos.Usuario;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaGestor;
@@ -15,29 +17,37 @@ public class ControladorGestor {
     private GestorDeProyecto gestorDeProyecto;
 
 
-
-    public ControladorGestor(GestorDeUsuarios gestorDeUsuarios, VistaGestor vistaGestor, GestorDeProyecto gestorDeProyecto) {
+    public ControladorGestor(GestorDeUsuarios gestorDeUsuarios, VistaGestor vistaGestor,GestorDeProyecto gestorDeProyecto) {
         this.gestorDeUsuarios = gestorDeUsuarios;
         this.vistaGestor = vistaGestor;
         this.gestorDeProyecto = gestorDeProyecto;
     }
 
     public void crearProyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, float recompensas, LocalDate fechaDeFin, String id,String nombreDeUsuario){
-        if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
-            vistaGestor.mensajeUsuarioNoEncontrado();
-        }
-        gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).crearProyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,recompensas,fechaDeFin,id);
+        Proyecto nuevoProyecto=new Proyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,recompensas,fechaDeFin,id);
+        gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).crearProyecto(nuevoProyecto);
         vistaGestor.mensajeProyectoCreado();
+        gestorDeProyecto.añadirProyecto(nuevoProyecto);
+    }
+
+    public void eliminarProyecto(String id,String nombreDeUsuario){
+        gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).eliminarProyecto(id);
+        gestorDeProyecto.eliminarProyecto(id);
+        vistaGestor.mensajeProyectoEliminado();
     }
 
     public void verProyectos(String nombreDeUsuario){
         vistaGestor.mensajeMostrarProyectos(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
-        vistaGestor.mostrarProyecto(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectos());
+        vistaGestor.mostrarProyectoDeGestor(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectos());
     }
 
-    public Proyecto BuscarProyecto(String idProyecto){
+    public Proyecto BuscarProyecto(String idProyecto,String nombreDeUsuario){
+        if(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).buscarProyectosDeGestor(idProyecto)==null){
+            vistaGestor.mensajeProyectoNoEncontrado();
+            return null;
+        }
         vistaGestor.mensajeDeProyectoBuscado();
-        return gestorDeProyecto.buscarProyecto(idProyecto);
+        return gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).buscarProyectosDeGestor(idProyecto);
     }
     public void modificarnNombreDeProyecto(String idProyecto,String nuevoNobreDeProyecto){
         gestorDeProyecto.buscarProyecto(idProyecto).setNombre(nuevoNobreDeProyecto);
@@ -83,16 +93,38 @@ public class ControladorGestor {
         return gestorDeUsuarios;
     }
 
-    public void inicioDeSecionAdmin(String nombreDeUsuario, String contraseña) {
+    public boolean inicioDeSecionGestor(String nombreDeUsuario, String contraseña) {
         if (gestorDeUsuarios.buscarUsuario(nombreDeUsuario) == null) {
             vistaGestor.idNoValido();
+            return false;
         } else if (gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getContraseña().equals(contraseña)) {
             FuncionesDeCorreo codigo = new FuncionesDeCorreo(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getCorreo());
             if(codigo.getCodigoDeCorreo().equals(vistaGestor.inicioDeSecionCodigo())){
                 vistaGestor.saludarUsuario();
+                return true;
             }
-
         }
+        return false;
+    }
+    public void usuarioBloqueado(String nombreDeUsuario){
+        if(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).isBloqueado()){
+            vistaGestor.usuarioBloqueado();
+        }
+    }
+    public void bloquearGestor(String nombreDeGestor){
+        gestorDeUsuarios.buscarUsuario(nombreDeGestor).setBloqueado(true);
+    }
+
+    public void cambiarUsuarioGestor(String nombreDeUsuario,String nuevoUsuario){
+        gestorDeUsuarios.buscarUsuario(nombreDeUsuario).cambioDeNombreDeUsusario(nuevoUsuario);
+
+    }
+
+    public void cambiarContraseñaDeUsuario(String nombreDeUsuario,String nuevaContraseña){
+        gestorDeUsuarios.buscarUsuario(nombreDeUsuario).cambioDeContraseña(nuevaContraseña);
+    }
+    public void añadirGestorAGestorDeUsuarios(Usuario Gestor){
+        gestorDeUsuarios.agregarUsuarios(Gestor);
     }
 
 }

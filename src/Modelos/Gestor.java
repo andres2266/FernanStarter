@@ -1,6 +1,5 @@
 package Modelos;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Gestor extends Usuario{
@@ -8,19 +7,16 @@ public class Gestor extends Usuario{
     private boolean usuarioBloqueado;
     private ArrayList<Proyecto> proyectosCreados;
 
-    public Gestor(String nombre, String contraseña, String correo, String id) {
-        super(nombre, contraseña, correo, id);
+    public Gestor(String nombre, String correo, String contraseña) {
+        super(nombre, correo,contraseña);
         this.usuarioBloqueado = false;
         proyectosCreados = new ArrayList<>();
     }
 
-    public Gestor(String nombre, String contraseña, String correo, boolean secion , String id) {
-        super(nombre, contraseña, correo,id);
-    }
 
     @Override
     public void cerrarSecion() {
-        setSecion(false);
+        setBloqueado(false);
     }
 
     public boolean cambioDeUsusario(String nuevoUsuario ){
@@ -34,8 +30,8 @@ public class Gestor extends Usuario{
         return true;
     }
 
-    public void crearProyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, float recompensas, LocalDate fechaDeFin, String id){
-        Proyecto nuevoProyecto = new Proyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,recompensas,fechaDeFin,id);
+    public void crearProyecto(Proyecto proyecto){
+        Proyecto nuevoProyecto = proyecto;
         proyectosCreados.add(nuevoProyecto);
     }
 
@@ -49,8 +45,19 @@ public class Gestor extends Usuario{
         return false;
     }
 
+    public Proyecto buscarProyectosDeGestor(String idProyecto){
+        for (int i = 0; i <proyectosCreados.size() ; i++) {
+            if(proyectosCreados.get(i).getId().equals(idProyecto)){
+                return proyectosCreados.get(i);
+            }
+        }
+        return null;
+    }
     public ArrayList<Proyecto> verArrayDeProyectos(){
         return proyectosCreados;
     }
 
+    public void setUsuarioBloqueado(boolean usuarioBloqueado) {
+        this.usuarioBloqueado = usuarioBloqueado;
+    }
 }

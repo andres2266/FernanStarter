@@ -12,4 +12,6 @@ public class Amigo {
     public String toString() {
         return "El nombre es " + nombre + "su correo es " + correo;
     }
+
+
 }

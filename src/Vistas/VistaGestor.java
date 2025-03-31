@@ -37,7 +37,10 @@ public class VistaGestor implements Credenciales {
         System.out.println(" EL proyecto buscado es ");
     }
 
-    public void mostrarProyecto(ArrayList<Proyecto> proyecto){
+    public void mostrarProyectoDeGestor(ArrayList<Proyecto> proyecto){
+        if(proyecto.isEmpty()){
+            System.out.println("no hay proyectos creados");
+        }
         for (int i = 0; i <proyecto.size() ; i++) {
             System.out.println(proyecto.get(i));
         }
@@ -77,9 +80,17 @@ public class VistaGestor implements Credenciales {
 
     public void mensajeProyectoCreado(){System.out.println("El proyecto fue creado");}
 
-    public void mensajeUsuarioNoEncontrado(){System.out.println("El usuario no ha sido enontrado");}
 
 
+    public void usuarioBloqueado(){
+        System.out.println("El usuario ha sido bloqueado");
+    }
+
+    public void mensajeProyectoNoEncontrado(){System.out.println("El proyecto no fue encontrado");}
+
+    public void mensajeProyectoEliminado(){
+        System.out.println("El proyecto fue eliminado");
+    }
 
     public void opcinesDelGestor(){
         System.out.println("1: Ver todos mis proyectos");
