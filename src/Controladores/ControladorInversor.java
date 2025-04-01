@@ -1,6 +1,6 @@
 package Controladores;
 import FuncionesDeCorreo.FuncionesDeCorreo;
-import Ivercion.Inversion;
+import Inversión.Inversion;
 import Modelos.Amigo;
 import Modelos.Inversor;
 import Modelos.Proyecto;

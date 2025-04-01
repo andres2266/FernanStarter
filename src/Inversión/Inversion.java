@@ -1,4 +1,4 @@
-package Ivercion;
+package Inversión;
 
 import Modelos.Inversor;
 import Modelos.Proyecto;

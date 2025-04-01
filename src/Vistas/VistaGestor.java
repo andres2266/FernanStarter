@@ -9,37 +9,37 @@ public class VistaGestor implements Credenciales {
     Scanner S = new Scanner(System.in);
 
 
-    public void idNoValido(){System.out.println("el id proporcido no es valido");}
+    public void idNoValido(){System.out.println("El id proporcionado no es válido");}
 
     public String inicioDeSecionCodigo(){
-        System.out.println("ingrese el codigo de verificacion");
+        System.out.println("Ingrese el código de verificación");
         String codigo = S.nextLine();
         return codigo;
     }
 
     public void pedirUsuario(){
-        System.out.println("Por facor introdusca el nombre De Usuario/Alias");
+        System.out.println("Por favor introduzca el nombre de usuario/alias");
     }
 
     public void PedirContraseña(){
-        System.out.println("Por favor introdusca su contraseña");
+        System.out.println("Por favor introduzca su contraseña");
     }
 
     public void saludarUsuario(){
-        System.out.println("Bienbenido al modo gestor");
+        System.out.println("Bienvenido al modo gestor");
     }
 
     public void mensajeMostrarProyectos(String nombreDeGestor){
-        System.out.println(" Estos son los proyectos Creados por el gestor " + nombreDeGestor );
+        System.out.println(" Estos son los proyectos creados por el gestor " + nombreDeGestor );
     }
 
     public void mensajeDeProyectoBuscado(){
-        System.out.println(" EL proyecto buscado es ");
+        System.out.println(" EL proyecto buscado és ");
     }
 
     public void mostrarProyectoDeGestor(ArrayList<Proyecto> proyecto){
         if(proyecto.isEmpty()){
-            System.out.println("no hay proyectos creados");
+            System.out.println("No hay proyectos creados");
         }
         for (int i = 0; i <proyecto.size() ; i++) {
             System.out.println(proyecto.get(i));
@@ -47,27 +47,27 @@ public class VistaGestor implements Credenciales {
     }
 
     public void mensajeDeCambioDeNombre(){
-        System.out.println("El nombre del proyecto fue cambiado");
+        System.out.println("El nombre del proyecto fué cambiado");
     }
 
     public void mensajeDeCambioDeDescripcion(){
-        System.out.println("la descripcion del proyecto fue cambiado");
+        System.out.println("La descripción del proyecto fué cambiado");
     }
 
     public void mensajeDeCambioDeCambioCategoria(){
-        System.out.println("La categoria fue cambiada");
+        System.out.println("La categoría fué cambiada");
     }
 
     public void mensajeCantidadNecesaria() {
-        System.out.println("La cantidad necesaria fue cambiada");
+        System.out.println("La cantidad necesaria fué cambiada");
     }
 
     public void mensajeCantidadFinanciada() {
-        System.out.println("La cantidad financiada fue cambiada");
+        System.out.println("La cantidad financiada fué cambiada");
     }
 
     public void mensajeFechaDeApertura() {
-        System.out.println("La fecha de apertura fue cambiada");
+        System.out.println("La fecha de apertura fué cambiada");
     }
 
     public void mensajeRecompensas() {
@@ -75,10 +75,10 @@ public class VistaGestor implements Credenciales {
     }
 
     public void mensajeFechaDeFin() {
-        System.out.println("La fecha de fin fue cambiada");
+        System.out.println("La fecha de fin fué cambiada");
     }
 
-    public void mensajeProyectoCreado(){System.out.println("El proyecto fue creado");}
+    public void mensajeProyectoCreado(){System.out.println("El proyecto fué creado");}
 
 
 
@@ -86,16 +86,16 @@ public class VistaGestor implements Credenciales {
         System.out.println("El usuario ha sido bloqueado");
     }
 
-    public void mensajeProyectoNoEncontrado(){System.out.println("El proyecto no fue encontrado");}
+    public void mensajeProyectoNoEncontrado(){System.out.println("El proyecto no fué encontrado");}
 
     public void mensajeProyectoEliminado(){
-        System.out.println("El proyecto fue eliminado");
+        System.out.println("El proyecto fué eliminado");
     }
 
     public void opcinesDelGestor(){
         System.out.println("1: Ver todos mis proyectos");
         System.out.println("2: Cambio de credenciales");
-        System.out.println("3: Cerrar secion");
+        System.out.println("3: Cerrar sesión");
     }
 
 }

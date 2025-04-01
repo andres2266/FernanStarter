@@ -7,32 +7,32 @@ public class VistaAdministrador implements Credenciales{
 
 
     public String inicioDeSecionCodigo(){
-        System.out.println("ingrese el codigo de verificacion");
-        String codigo = S.nextLine();
+        System.out.println("Ingrese el código de verificación");
+        String codigo = S.next();
         return codigo;
     }
 
     @Override
     public void PedirContraseña() {
-        System.out.println("Por favor introdusca su contraseña");
+        System.out.println("Por favor introduzca su contraseña");
     }
 
     @Override
     public void pedirUsuario() {
-        System.out.println("Por facor introdusca el nombre De Usuario/Alias");
+        System.out.println("Por favor introduzca el nombre de usuario/alias");
     }
 
     public void credencialesNoValidos(){
-        System.out.println("credenciales no validos");
+        System.out.println("Credenciales no validas");
     }
 
     @Override
     public void saludarUsuario() {
-        System.out.println("Bienbenido al modo Administrador");
+        System.out.println("Bienvenido al modo administrador");
     }
 
     public void cambioDeContraseña(){
-        System.out.println("La contrasela ha sido cambiada");
+        System.out.println("La contraseña ha sido cambiada");
     }
 
     public void cambioDeUsuario(){
@@ -48,27 +48,27 @@ public class VistaAdministrador implements Credenciales{
     }
 
     public void mensajeDeCambioDeNombre(){
-        System.out.println("El nombre del proyecto fue cambiado");
+        System.out.println("El nombre del proyecto fué cambiado");
     }
 
     public void mensajeDeCambioDeDescripcion(){
-        System.out.println("la descripcion del proyecto fue cambiado");
+        System.out.println("La descripción del proyecto fué cambiada");
     }
 
     public void mensajeDeCambioDeCambioCategoria(){
-        System.out.println("La categoria fue cambiada");
+        System.out.println("La categoría fué cambiada");
     }
 
     public void mensajeCantidadNecesaria() {
-        System.out.println("La cantidad necesaria fue cambiada");
+        System.out.println("La cantidad necesaria fué cambiada");
     }
 
     public void mensajeCantidadFinanciada() {
-        System.out.println("La cantidad financiada fue cambiada");
+        System.out.println("La cantidad financiada fué cambiada");
     }
 
     public void mensajeFechaDeApertura() {
-        System.out.println("La fecha de apertura fue cambiada");
+        System.out.println("La fecha de apertura fué cambiada");
     }
 
     public void mensajeRecompensas() {
@@ -76,7 +76,7 @@ public class VistaAdministrador implements Credenciales{
     }
 
     public void mensajeFechaDeFin() {
-        System.out.println("La fecha de fin fue cambiada");
+        System.out.println("La fecha de fin fué cambiada");
     }
 
 

@@ -1,6 +1,6 @@
 package Modelos;
 
-import Ivercion.Inversion;
+import Inversión.Inversion;
 
 import java.util.ArrayList;
 

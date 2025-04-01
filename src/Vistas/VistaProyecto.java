@@ -11,7 +11,7 @@ public class VistaProyecto {
 
     public void verProyectos(ArrayList<Proyecto> todosLosProyectos){
         if(todosLosProyectos.isEmpty()){
-            System.out.println("no se ha creado ningun proyecto");
+            System.out.println("No se ha creado ningún proyecto");
         }
         for (int i = 0; i <todosLosProyectos.size() ; i++) {
             System.out.println(todosLosProyectos.get(i));

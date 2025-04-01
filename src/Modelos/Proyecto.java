@@ -1,8 +1,7 @@
 package Modelos;
 
-import Ivercion.Inversion;
+import Inversión.Inversion;
 
-import java.security.PublicKey;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
