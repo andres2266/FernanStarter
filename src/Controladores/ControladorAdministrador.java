@@ -2,6 +2,7 @@ package Controladores;
 
 import FuncionesDeCorreo.FuncionesDeCorreo;
 import Modelos.Categoria;
+import Modelos.RecompensasDeProyecto;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaAdministrador;
@@ -15,7 +16,6 @@ public class ControladorAdministrador {
     public ControladorAdministrador(GestorDeUsuarios gestorDeUsuarios, VistaAdministrador vistaAdministrador) {
         this.gestorDeUsuarios = gestorDeUsuarios;
         this.vistaAdministrador = vistaAdministrador;
-
     }
 
     public void cambiarContraseñaAdministrdor(String contraseña, String  nombreDeUsuario) {
@@ -28,7 +28,6 @@ public class ControladorAdministrador {
         gestorDeUsuarios.buscarUsuario(nombreDeUsuario).cambioDeNombreDeUsusario(NuevonombreDeUsuario);
         vistaAdministrador.cambioDeUsuario();
     }
-
 
     public void cerrarCecionDeAdmin(String  nombreDeUsuario) {
         gestorDeUsuarios.buscarUsuario( nombreDeUsuario).cerrarSecion();
@@ -72,8 +71,8 @@ public class ControladorAdministrador {
         vistaAdministrador.mensajeFechaDeApertura();
     }
 
-    public void modificarRecompensas(float recompensas, String nombreDeUsuario) {
-        gestorDeProyecto.buscarProyecto(nombreDeUsuario).setRecompensas(recompensas);
+    public void modificarRecompensas( String idDeProyecto, RecompensasDeProyecto NuevarecompensasDeProyecto,String idRecompesa) {
+        gestorDeProyecto.buscarProyecto(idDeProyecto).modificarRecompensa(NuevarecompensasDeProyecto,idRecompesa);
         vistaAdministrador.mensajeRecompensas();
     }
 
@@ -91,6 +90,9 @@ public class ControladorAdministrador {
         gestorDeProyecto.eliminarProyecto(id);
     }
 
+    public void ordenarTodosLosProyectosPorOrdenDeCantidadFinanciada(){
+        gestorDeProyecto.oridenarPorImporteFinanciado(gestorDeProyecto.verArrayDeProyectos());
+    }
     public boolean inicioDeSecionAdmin(String nombreDeUsuario, String contraseña) {
         if (gestorDeUsuarios.buscarUsuario( nombreDeUsuario) == null) {
             vistaAdministrador.credencialesNoValidos();
@@ -103,10 +105,7 @@ public class ControladorAdministrador {
             }
         }
         return false;
-
     }
-
-
 }
 
 

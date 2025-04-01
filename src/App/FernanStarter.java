@@ -61,14 +61,14 @@ public class FernanStarter {
         boolean credencialesGestor = false;
         boolean credencialesInversor = false;
 
-        while (opcionesDeMenu != 6) {
+        while (opcionesDeMenu != 7) {
             switch (opcionesDeMenu=menuPrincipal()) {
                 case 1:
                 do {
                     System.out.println("Ingresa tu nombre de usuario");
-                    String nombreDeUsuarioAdministrador = S.nextLine();
+                    String nombreDeUsuarioAdministrador = S.next();
                     System.out.println("Ingresa la contraseña del usuario");
-                    String contraseñaAdministrador = S.nextLine();
+                    String contraseñaAdministrador = S.next();
                    credencialesAdmin = controladorAdministrador.inicioDeSecionAdmin(nombreDeUsuarioAdministrador, contraseñaAdministrador);
                 }while (!credencialesAdmin);
                     while (opcionesDeAdmin !=6 ){
@@ -76,12 +76,12 @@ public class FernanStarter {
                         switch (opcionesDeAdmin) {
                             case 1:
                                 System.out.println("Ingresa el id del usuario que quieras desbloquear");
-                                String nombreDesvloqueado = S.nextLine();
+                                String nombreDesvloqueado = S.next();
                                 controladorAdministrador.desbloquearUsuario(nombreDesvloqueado);
                                 break;
                             case 2:
                                 System.out.println("Ingresa el id del usuario que quieras bloquear");
-                                String nombreBloqueado = S.nextLine();
+                                String nombreBloqueado = S.next();
                                 controladorAdministrador.bloquearUsuario(nombreBloqueado);
                                 break;
                             case 3:
@@ -89,28 +89,31 @@ public class FernanStarter {
                                 break;
                             case 4:
                                 System.out.println("Escribe el id del proyecto que deseas eliminar");
-                                String idDeProyecto = S.nextLine();
+                                String idDeProyecto = S.next();
                                 controladorAdministrador.eliminarProyecto(idDeProyecto);
                                 break;
                             case 5:
                                 System.out.println("Escribe el usuario al que quieres cambiar la contraseña");
-                                String nombreDeUsuario = S.nextLine();
+                                String nombreDeUsuario = S.next();
                                 System.out.println("Escribe el nuevo nombre de usaurio");
-                                String nuevoNombreDeUsuario = S.nextLine();
+                                String nuevoNombreDeUsuario = S.next();
                                 System.out.println("Escribe la nueva contraseña");
-                                String nuevaContraseña = S.nextLine();
+                                String nuevaContraseña = S.next();
                                 controladorAdministrador.cambiarUsuarioDeAdministrador(nombreDeUsuario, nuevoNombreDeUsuario);
                                 controladorAdministrador.cambiarContraseñaAdministrdor(nuevaContraseña, nombreDeUsuario);
                                 break;
+                            case 6:
+                                  controladorAdministrador.ordenarTodosLosProyectosPorOrdenDeCantidadFinanciada();
+                                  break;
                         }
                     }
                     break;
                 case 2:
                     do {
                         System.out.println("Ingresa tu nombre de usuario");
-                        nombreDeUsuarioGestor = S.nextLine();
+                        nombreDeUsuarioGestor = S.next();
                         System.out.println("Ingresa la contraseña del usuario");
-                        String contraseñaGestor = S.nextLine();
+                        String contraseñaGestor = S.next();
 
                         if(gestorDeUsuarios.buscarUsuario(nombreDeUsuarioGestor).isBloqueado()){
                             controladorGestor.usuarioBloqueado(nombreDeUsuarioGestor);
@@ -130,22 +133,22 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesGestor);
-                    while (opcionesDeGestor !=7 ) {
+                    while (opcionesDeGestor !=10) {
                         switch (opcionesDeGestor = muenuGestor()) {
                             case 1:
                                 controladorGestor.verProyectos(nombreDeUsuarioGestor);
                                 break;
                             case 2:
                                 System.out.println("Escribe el id del proyecto");
-                                String id = S.nextLine();
+                                String id = S.next();
                                 System.out.println("Escribe el nombre del proyecto:");
-                                String nombre = S.nextLine();
+                                String nombre = S.next();
 
                                 System.out.println("Escribe la descripción del proyecto:");
-                                String descripcion = S.nextLine();
+                                String descripcion = S.next();
 
                                 System.out.println("Escribe la categoría");
-                                String categoria = S.nextLine();
+                                String categoria = S.next();
 
 
                                 System.out.println("Escribe la cantidad necesaria:");
@@ -169,30 +172,49 @@ public class FernanStarter {
                                 System.out.println("Escribe el día de fin:");
                                 int dayFin =S.nextInt();
                                 LocalDate fechaDeFin = LocalDate.of(yearFin, monthFin, dayFin);
-
-                                System.out.println("Escribe la cantidad de recompensa:");
-                                float recompensas = S.nextFloat();
-                                controladorGestor.crearProyecto(nombre,descripcion,Categoria.valueOf(categoria),cantidadNecesaria,cantidadFinanciada,fechaInicio,recompensas,fechaDeFin,id,nombreDeUsuarioGestor);
+                                controladorGestor.crearProyecto(nombre,descripcion,Categoria.valueOf(categoria),cantidadNecesaria,cantidadFinanciada,fechaInicio,fechaDeFin,id,nombreDeUsuarioGestor);
                                 break;
                             case 3:
                                 System.out.println("Escribe id de proyecto que quieres eliminar");
-                                String proyectoId = S.nextLine();
+                                String proyectoId = S.next();
                                 controladorGestor.eliminarProyecto(proyectoId,nombreDeUsuarioGestor);
                                 break;
                             case 4:
 
                             case 5:
                                 System.out.println("Escribe tu nuevo nombre de usuario");
-                                String nuevoNombreDeUsuario = S.nextLine();
+                                String nuevoNombreDeUsuario = S.next();
                                 System.out.println("Escribe tu contraseña");
-                                String nuevaContraseña = S.nextLine();
+                                String nuevaContraseña = S.next();
                                 controladorGestor.cambiarUsuarioGestor(nombreDeUsuarioGestor,nuevoNombreDeUsuario);
                                 controladorGestor.cambiarContraseñaDeUsuario(nombreDeUsuarioGestor,nuevaContraseña);
                                 break;
                             case 6 :
                                 System.out.println("Escribe el id del proyecto que buscas");
-                                String idDeProyectoBuscado = S.nextLine();
+                                String idDeProyectoBuscado = S.next();
                                 gestorDeProyecto.buscarProyecto(idDeProyectoBuscado);
+                                break;
+                            case 7:
+                                System.out.println(" Escribe el id de la recompensa ");
+                                String idDeRecompensa = S.next();
+                                System.out.println("Escribe la descripcion de la recompensa");
+                                String descripcionDeProyecto = S.next();
+                                System.out.println("Escribe la cantidad de la recompensa");
+                                int recompensaDePoryecto = Integer.parseInt(S.next());
+                                System.out.println("Escribe el id del proyecto al cual quieres agregar la recompensa");
+                                String idDeProyecto = S.next();
+                                controladorDeProyecto.añadirRecompensaAProyecto(idDeProyecto,descripcionDeProyecto,recompensaDePoryecto,idDeProyecto);
+                                break;
+
+                            case 8:
+                                System.out.println("Escribe el id del proyecto que deseas ver sus recompensas");
+                                String IdDeProyecto = S.next();
+                                controladorDeProyecto.verRecompensasDeProyecto(IdDeProyecto);
+                                break;
+                            case 9:
+                                System.out.println("Escibe el nombre del gestor para ordenar sus proyectos creados");
+                                String nombreDeusuarioDeGestor = S.next();
+                                controladorGestor.ordenarProyectoPorImporteRealizado(nombreDeusuarioDeGestor);
                                 break;
                         }
                     }
@@ -222,7 +244,7 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesInversor);
-                    while (opcionesInversor !=10 ) {
+                    while (opcionesInversor !=11 ) {
                         opcionesInversor = muenuInversor();
                         switch (opcionesInversor) {
                             case 1:
@@ -245,9 +267,9 @@ public class FernanStarter {
                                 controladorInversor.restarCreditoAcartera(restarACartera, nombreDeUsuarioGestor);
                             case 6:
                                 System.out.println("Escribe tu nuevo nombre de usuario");
-                                String nuevoNombreDeUsuario = S.nextLine();
+                                String nuevoNombreDeUsuario = S.next();
                                 System.out.println("Escribe tu contraseña");
-                                String nuevaContraseña = S.nextLine();
+                                String nuevaContraseña = S.next();
                                 controladorGestor.cambiarUsuarioGestor(nombreDeUsuarioInversor, nuevoNombreDeUsuario);
                                 controladorGestor.cambiarContraseñaDeUsuario(nombreDeUsuarioInversor, nuevaContraseña);
                                 break;
@@ -255,9 +277,9 @@ public class FernanStarter {
                                 controladorInversor.mostrarAmigosDelIversor(nombreDeUsuarioInversor);
                             case 8:
                                 System.out.println("Ingresa el nombre del amigo");
-                                String nombreDeAmigo = S.nextLine();
+                                String nombreDeAmigo = S.next();
                                 System.out.println("Ingresa el correo de amigo");
-                                String correoDeAmigo = S.nextLine();
+                                String correoDeAmigo = S.next();
                                 Amigo nuevoAmigo = new Amigo(nombreDeAmigo, correoDeAmigo);
                                 controladorInversor.añadirAmigoDeInversor(nuevoAmigo, nombreDeUsuarioInversor);
                                 break;
@@ -275,6 +297,7 @@ public class FernanStarter {
                                 LocalDate fechaIversion = LocalDate.of(año, mes, dia);
                                 controladorInversor.invertir(nombreDeUsuarioInversor, gestorDeProyecto.buscarProyecto(proyecto), inversion, fechaIversion);
                                 break;
+
                         }
                     }
                         break;
@@ -282,21 +305,21 @@ public class FernanStarter {
                     switch (muenuCreacionUsuarios()){
                         case 1:
                             System.out.print("Ingrese su nombre: ");
-                            String nombreGestor = S.nextLine();
+                            String nombreGestor = S.next();
                             System.out.print("Ingrese su contraseña: ");
-                            String contraseñaGestor = S.nextLine();
+                            String contraseñaGestor = S.next();
                             System.out.print("Ingrese su correo electrónico: ");
-                            String correoGestor = S.nextLine();
+                            String correoGestor = S.next();
                             Gestor gestor = new Gestor(nombreGestor,correoGestor,contraseñaGestor);
                             controladorGestor.añadirGestorAGestorDeUsuarios(gestor);
                             break;
                         case 2 :
                             System.out.print("Ingrese su nombre: ");
-                            String nombreInversor = S.nextLine();
+                            String nombreInversor = S.next();
                             System.out.print("Ingrese su contraseña: ");
-                            String contraseñaInversor = S.nextLine();
+                            String contraseñaInversor = S.next();
                             System.out.print("Ingrese su correo electrónico: ");
-                            String correoInversor = S.nextLine();
+                            String correoInversor = S.next();
                             Gestor Inversor = new Gestor(nombreInversor,correoInversor,contraseñaInversor);
                             controladorInversor.añadirInversorAGestorDeUsuarios(Inversor);
                             break;

@@ -11,7 +11,6 @@ import java.util.HashMap;
 public class GestorDeUsuarios {
 
     private HashMap<String, Usuario> gestorDeUsuarios;
-    private static int usuariosInsertados = 0;
 
     public GestorDeUsuarios() {
         gestorDeUsuarios = new HashMap<>();
@@ -19,7 +18,6 @@ public class GestorDeUsuarios {
 
     public void agregarUsuarios(Usuario usuario) {
         gestorDeUsuarios.put(usuario.getNombre(), usuario);
-        usuariosInsertados++;
     }
 
     public boolean eliminarUsuario(String id) {

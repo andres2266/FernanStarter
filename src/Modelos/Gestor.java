@@ -24,7 +24,9 @@ public class Gestor extends Usuario{
         return true;
     }
 
-
+    public ArrayList<Proyecto> verArrayDeProyectosDeGestor(){
+        return proyectosCreados;
+    }
     public boolean cambioDeContraseña(String nuevaContraseña ){
         super.cambioDeContraseña(nuevaContraseña);
         return true;
@@ -43,6 +45,10 @@ public class Gestor extends Usuario{
             }
         }
         return false;
+    }
+
+    public void oridenarPorImporteFinanciado(){
+        proyectosCreados.sort((a , b) ->(b.getCantidadFinanciada()-a.getCantidadFinanciada()));
     }
 
     public Proyecto buscarProyectosDeGestor(String idProyecto){

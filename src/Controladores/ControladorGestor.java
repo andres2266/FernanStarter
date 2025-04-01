@@ -1,10 +1,7 @@
 package Controladores;
 
 import FuncionesDeCorreo.FuncionesDeCorreo;
-import Modelos.Categoria;
-import Modelos.Gestor;
-import Modelos.Proyecto;
-import Modelos.Usuario;
+import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaGestor;
@@ -23,8 +20,8 @@ public class ControladorGestor {
         this.gestorDeProyecto = gestorDeProyecto;
     }
 
-    public void crearProyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, float recompensas, LocalDate fechaDeFin, String id,String nombreDeUsuario){
-        Proyecto nuevoProyecto=new Proyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,recompensas,fechaDeFin,id);
+    public void crearProyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, LocalDate fechaDeFin, String id,String nombreDeUsuario){
+        Proyecto nuevoProyecto=new Proyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,fechaDeFin,id);
         gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).crearProyecto(nuevoProyecto);
         vistaGestor.mensajeProyectoCreado();
         gestorDeProyecto.añadirProyecto(nuevoProyecto);
@@ -40,7 +37,10 @@ public class ControladorGestor {
         vistaGestor.mensajeMostrarProyectos(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
         vistaGestor.mostrarProyectoDeGestor(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectos());
     }
-
+    public void ordenarProyectoPorImporteRealizado(String nombreDeUsuario){
+       gestorDeProyecto.oridenarPorImporteFinanciado(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectosDeGestor());
+        vistaGestor.mensajeDeOrdenacionPorFinanciacion();
+    }
     public Proyecto BuscarProyecto(String idProyecto,String nombreDeUsuario){
         if(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).buscarProyectosDeGestor(idProyecto)==null){
             vistaGestor.mensajeProyectoNoEncontrado();
@@ -74,8 +74,8 @@ public class ControladorGestor {
         vistaGestor.mensajeFechaDeApertura();
     }
 
-    public void modificarRecompensas(float recompensas, String nombreDeUsuario) {
-        gestorDeProyecto.buscarProyecto(nombreDeUsuario).setRecompensas(recompensas);
+    public void modificarRecompensas(String idDeProyecto, RecompensasDeProyecto NuevarecompensasDeProyecto, String idRecompesa) {
+        gestorDeProyecto.buscarProyecto(idDeProyecto).modificarRecompensa(NuevarecompensasDeProyecto,idRecompesa);
         vistaGestor.mensajeRecompensas();
     }
 

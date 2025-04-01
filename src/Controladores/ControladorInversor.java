@@ -71,6 +71,7 @@ public class ControladorInversor {
         vistaInversor.mensajeCambioDeUsusaio();
     }
 
+
     public void cambioDeContraseñaDeInversor(String contraseña, String nombreDeUsuario) {
         if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
             vistaInversor.mensajeUsuarioNoEncontrado();

@@ -45,6 +45,9 @@ public class VistaGestor implements Credenciales {
             System.out.println(proyecto.get(i));
         }
     }
+    public void mensajeDeOrdenacionPorFinanciacion(){
+        System.out.println("El array fue ordenado por orden de el que tenga la finacicion mas alta");
+    }
 
     public void mensajeDeCambioDeNombre(){
         System.out.println("El nombre del proyecto fué cambiado");

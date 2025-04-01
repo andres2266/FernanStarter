@@ -11,22 +11,22 @@ public class Proyecto implements Inversible {
     private String descripcion;
     private Categoria categoria;
     private float cantidadNecesaria;
-    private float cantidadFinanciada;
+    private int cantidadFinanciada;
     private LocalDate fechaDeApertura;
     private LocalDate fechaDeFin;
-    private float recompensas;
+    private ArrayList <RecompensasDeProyecto> recompensas;
     private ArrayList<Inversion> invercionesRealizadas;
 
-    public Proyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, float recompensas, LocalDate fechaDeFin,String id) {
+    public Proyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, LocalDate fechaDeFin,String id) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.categoria = categoria;
         this.cantidadNecesaria = cantidadNecesaria;
         this.cantidadFinanciada = cantidadFinanciada;
         this.fechaDeApertura = fechaDeApertura;
-        this.recompensas = recompensas;
         this.fechaDeFin = fechaDeFin;
         this.id = id;
+        recompensas = new ArrayList<>();
         invercionesRealizadas = new ArrayList<>();
     }
 
@@ -54,7 +54,7 @@ public class Proyecto implements Inversible {
         this.categoria = categoria;
     }
 
-    public void setCantidadFinanciada(float cantidadFinanciada) {
+    public void setCantidadFinanciada(int cantidadFinanciada) {
         this.cantidadFinanciada = cantidadFinanciada;
     }
 
@@ -66,8 +66,27 @@ public class Proyecto implements Inversible {
         this.fechaDeFin = fechaDeFin;
     }
 
-    public void setRecompensas(float recompensas) {
-        this.recompensas = recompensas;
+    public void añadirRecompensa(RecompensasDeProyecto recompensasDeProyecto){
+        recompensas.add(recompensasDeProyecto);
+    }
+
+    public ArrayList<RecompensasDeProyecto> verArrayDeProyecto(){
+        return recompensas;
+    }
+
+
+    public void modificarRecompensa(RecompensasDeProyecto nuevaRecompensa, String idRecompensa){
+        for (int i = 0; i <recompensas.size() ; i++) {
+            if(recompensas.get(i).getIdDeRecompensa().equals(idRecompensa)){
+                recompensas.add(i,nuevaRecompensa);
+            }
+        }
+    }
+
+
+
+    public void agregarRecompensa(RecompensasDeProyecto recompensasDeProyecto){
+        recompensas.add(recompensasDeProyecto);
     }
 
     public String getNombre() {
@@ -80,7 +99,7 @@ public class Proyecto implements Inversible {
 
     public Inversion verInversion(int inversionIndividual){
         for (int i = 0; i <invercionesRealizadas.size() ; i++) {
-            return invercionesRealizadas.get(inversionIndividual);
+            return invercionesRealizadas.get(i);
         }
         return null;
     }
@@ -104,6 +123,9 @@ public class Proyecto implements Inversible {
     setCantidadNecesaria(cantidadDisminuida);
     }
 
+    public int getCantidadFinanciada() {
+        return cantidadFinanciada;
+    }
 
     @Override
     public String toString() {
