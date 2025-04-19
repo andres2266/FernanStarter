@@ -85,17 +85,12 @@ public class Proyecto implements Inversible {
 
 
 
-    public void agregarRecompensa(RecompensasDeProyecto recompensasDeProyecto){
-        recompensas.add(recompensasDeProyecto);
-    }
 
     public String getNombre() {
         return nombre;
     }
 
-    public ArrayList<Inversion> agregarInverciones(Inversion inversion){
-        return invercionesRealizadas;
-    }
+
 
     public Inversion verInversion(int inversionIndividual){
         for (int i = 0; i <invercionesRealizadas.size() ; i++) {
@@ -125,6 +120,10 @@ public class Proyecto implements Inversible {
 
     public int getCantidadFinanciada() {
         return cantidadFinanciada;
+    }
+
+    public LocalDate getFechaDeApertura() {
+        return fechaDeApertura;
     }
 
     @Override

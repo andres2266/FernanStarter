@@ -45,6 +45,9 @@ public class GestorDeProyecto {
         return gestorProyecto;
     }
 
+    public void ordenarArrayPorFecha(ArrayList<Proyecto> proyectos){
+    }
+
     public boolean aterarProyecto(Proyecto proyecto,String id){
         for (int i = 0; i <gestorProyecto.size() ; i++) {
             if (gestorProyecto.get(i).getId().equals(id)){
