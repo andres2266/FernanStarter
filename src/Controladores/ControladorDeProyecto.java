@@ -33,7 +33,7 @@ public class ControladorDeProyecto {
     }
 
     public void ordenarProyectoPorImporteRealizado(){
-        gestorDeProyecto.oridenarPorImporteFinanciado(gestorDeProyecto.verArrayDeProyectos());
+        gestorDeProyecto.ordenarPorImporteFinanciado(gestorDeProyecto.verArrayDeProyectos());
         vistaProyecto.mensajeDeOrdenacionPorFinanciacion();
     }
 

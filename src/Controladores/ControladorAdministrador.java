@@ -13,9 +13,10 @@ public class ControladorAdministrador {
     private GestorDeUsuarios gestorDeUsuarios;
     private VistaAdministrador vistaAdministrador;
     private GestorDeProyecto gestorDeProyecto;
-    public ControladorAdministrador(GestorDeUsuarios gestorDeUsuarios, VistaAdministrador vistaAdministrador) {
+    public ControladorAdministrador(GestorDeUsuarios gestorDeUsuarios, VistaAdministrador vistaAdministrador, GestorDeProyecto gestorDeProyecto) {
         this.gestorDeUsuarios = gestorDeUsuarios;
         this.vistaAdministrador = vistaAdministrador;
+        this.gestorDeProyecto =gestorDeProyecto;
     }
 
     public void cambiarContraseñaAdministrdor(String contraseña, String  nombreDeUsuario) {
@@ -90,8 +91,14 @@ public class ControladorAdministrador {
         gestorDeProyecto.eliminarProyecto(id);
     }
 
+    public void ordenarPorFecha(){
+        gestorDeProyecto.ordenarArrayPorFecha(gestorDeProyecto.verArrayDeProyectos());
+        vistaAdministrador.mensajeProyectosOrdenadosPorFecha();
+    }
+
     public void ordenarTodosLosProyectosPorOrdenDeCantidadFinanciada(){
-        gestorDeProyecto.oridenarPorImporteFinanciado(gestorDeProyecto.verArrayDeProyectos());
+        gestorDeProyecto.ordenarPorImporteFinanciado(gestorDeProyecto.verArrayDeProyectos());
+        vistaAdministrador.mensajeCantidadFinanciada();
     }
     public boolean inicioDeSecionAdmin(String nombreDeUsuario, String contraseña) {
         if (gestorDeUsuarios.buscarUsuario( nombreDeUsuario) == null) {

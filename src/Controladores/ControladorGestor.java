@@ -13,7 +13,6 @@ public class ControladorGestor {
     private VistaGestor vistaGestor;
     private GestorDeProyecto gestorDeProyecto;
 
-
     public ControladorGestor(GestorDeUsuarios gestorDeUsuarios, VistaGestor vistaGestor,GestorDeProyecto gestorDeProyecto) {
         this.gestorDeUsuarios = gestorDeUsuarios;
         this.vistaGestor = vistaGestor;
@@ -33,12 +32,17 @@ public class ControladorGestor {
         vistaGestor.mensajeProyectoEliminado();
     }
 
+    public void ordenarPorFecha(String nombreDeUsuario){
+     gestorDeProyecto.ordenarArrayPorFecha( gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectos());
+     vistaGestor.mensajeProyectosOrdenadosPorFecha();
+    }
+
     public void verProyectos(String nombreDeUsuario){
         vistaGestor.mensajeMostrarProyectos(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
         vistaGestor.mostrarProyectoDeGestor(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectos());
     }
     public void ordenarProyectoPorImporteRealizado(String nombreDeUsuario){
-       gestorDeProyecto.oridenarPorImporteFinanciado(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectosDeGestor());
+       gestorDeProyecto.ordenarPorImporteFinanciado(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectosDeGestor());
         vistaGestor.mensajeDeOrdenacionPorFinanciacion();
     }
     public Proyecto BuscarProyecto(String idProyecto,String nombreDeUsuario){

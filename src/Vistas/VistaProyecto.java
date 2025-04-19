@@ -23,11 +23,11 @@ public class VistaProyecto {
     public void mensajeDeOrdenacionPorFinanciacion(){
         System.out.println("El array fue ordenado por orden de el que tenga la finacicion mas alta");
     }
-
     public void verProyectos(ArrayList<Proyecto> todosLosProyectos){
         if(todosLosProyectos.isEmpty()){
             System.out.println("No se ha creado ningún proyecto");
         }
+
 
 
         for (int i = 0; i <todosLosProyectos.size() ; i++) {

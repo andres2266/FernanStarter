@@ -20,9 +20,11 @@ public class Menus {
         System.out.println("1: Desbloqueo de usuarios");
         System.out.println("2: Bloquear usario");
         System.out.println("3: Ver proyectos");
-        System.out.println("4: Cambios de credenciales");
-        System.out.println("5: Ordenar todos los proyectos por orden de invercion");
-        System.out.println("6: Cerrar sesión");
+        System.out.println("4: Eliminar proyecto");
+        System.out.println("5: Cambios de credenciales");
+        System.out.println("6: Ordenar todos los proyectos por orden de invercion");
+        System.out.println("7: Ordenar todos los proyectos por fecha");
+        System.out.println("8: Cerrar sesión");
         int opcion = Integer.parseInt(S.next());
         return opcion;
     }
@@ -37,8 +39,9 @@ public class Menus {
         System.out.println("6  Buscar un proyecto");
         System.out.println("7 Agregar recompensa a proyecto");
         System.out.println("8: Ver recompensas de proyecto");
-        System.out.println("9: Ordenar Array por orden de importe financiado");
-        System.out.println("10: Cerrar sesión");
+        System.out.println("9: Ordenar proyectos por orden de importe financiado");
+        System.out.println("10: Ordenar poryectos por orden de fecha ");
+        System.out.println("11: Cerrar sesión");
         int opcion = S.nextInt();
         return opcion;
     }

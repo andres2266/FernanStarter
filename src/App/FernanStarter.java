@@ -16,7 +16,6 @@ import java.util.Scanner;
 
 import static FuncionesMenus.Menus.*;
 
-
 public class FernanStarter {
     public static void main(String[] args) {
 
@@ -37,7 +36,7 @@ public class FernanStarter {
         GestorDeProyecto gestorDeProyecto = new GestorDeProyecto();
 
 
-        ControladorAdministrador controladorAdministrador = new ControladorAdministrador(gestorDeUsuarios, vistaAdministrador);
+        ControladorAdministrador controladorAdministrador = new ControladorAdministrador(gestorDeUsuarios, vistaAdministrador,gestorDeProyecto);
         ControladorDeProyecto controladorDeProyecto = new ControladorDeProyecto(gestorDeProyecto, vistaProyecto);
         ControladorGestor controladorGestor = new ControladorGestor(gestorDeUsuarios,vistaGestor,gestorDeProyecto);
         ControladorInversor controladorInversor = new ControladorInversor(gestorDeUsuarios,vistaInversor);
@@ -57,7 +56,7 @@ public class FernanStarter {
         int intentosInversor = 2;
 
 
-        boolean credencialesAdmin;
+        boolean credencialesAdmin=false;
         boolean credencialesGestor = false;
         boolean credencialesInversor = false;
 
@@ -71,7 +70,7 @@ public class FernanStarter {
                     String contraseñaAdministrador = S.next();
                    credencialesAdmin = controladorAdministrador.inicioDeSecionAdmin(nombreDeUsuarioAdministrador, contraseñaAdministrador);
                 }while (!credencialesAdmin);
-                    while (opcionesDeAdmin !=6 ){
+                    while (opcionesDeAdmin !=8 ){
                         opcionesDeAdmin=menuAdministrador();
                         switch (opcionesDeAdmin) {
                             case 1:
@@ -105,8 +104,13 @@ public class FernanStarter {
                             case 6:
                                   controladorAdministrador.ordenarTodosLosProyectosPorOrdenDeCantidadFinanciada();
                                   break;
+                            case 7:
+                                controladorAdministrador.ordenarPorFecha();
+                                break;
                         }
+
                     }
+                    opcionesDeAdmin =0;
                     break;
                 case 2:
                     do {
@@ -133,7 +137,7 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesGestor);
-                    while (opcionesDeGestor !=10) {
+                    while (opcionesDeGestor !=11) {
                         switch (opcionesDeGestor = muenuGestor()) {
                             case 1:
                                 controladorGestor.verProyectos(nombreDeUsuarioGestor);
@@ -216,8 +220,15 @@ public class FernanStarter {
                                 String nombreDeusuarioDeGestor = S.next();
                                 controladorGestor.ordenarProyectoPorImporteRealizado(nombreDeusuarioDeGestor);
                                 break;
+                            case 10:
+                                System.out.println("Escibe el nombre del gestor para ordenar sus proyectos creados");
+                                String NombreDeusuarioDeGestor = S.next();
+                                controladorGestor.ordenarPorFecha(NombreDeusuarioDeGestor);
+                                break;
                         }
+
                     }
+                    opcionesDeGestor = 0;
                     break;
                 case 3 :
                     do {
@@ -300,6 +311,7 @@ public class FernanStarter {
 
                         }
                     }
+                    opcionesDeAdmin = 0;
                         break;
                 case 4:
                     switch (muenuCreacionUsuarios()){

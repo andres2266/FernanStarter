@@ -1,7 +1,6 @@
 package MoldelosGestores;
 
 import Modelos.Proyecto;
-import Modelos.RecompensasDeProyecto;
 
 
 import java.util.ArrayList;
@@ -37,7 +36,7 @@ public class GestorDeProyecto {
         return null;
     }
 
-    public void oridenarPorImporteFinanciado(ArrayList<Proyecto> proyecrtos){
+    public void ordenarPorImporteFinanciado(ArrayList<Proyecto> proyecrtos){
             proyecrtos.sort((a , b) -> (b.getCantidadFinanciada()-a.getCantidadFinanciada()));
     }
 
@@ -46,6 +45,7 @@ public class GestorDeProyecto {
     }
 
     public void ordenarArrayPorFecha(ArrayList<Proyecto> proyectos){
+        proyectos.sort((a,b)->a.getFechaDeApertura().compareTo(b.getFechaDeApertura()));
     }
 
     public boolean aterarProyecto(Proyecto proyecto,String id){

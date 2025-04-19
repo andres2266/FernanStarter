@@ -84,13 +84,9 @@ public class Proyecto implements Inversible {
     }
 
 
-
-
     public String getNombre() {
         return nombre;
     }
-
-
 
     public Inversion verInversion(int inversionIndividual){
         for (int i = 0; i <invercionesRealizadas.size() ; i++) {

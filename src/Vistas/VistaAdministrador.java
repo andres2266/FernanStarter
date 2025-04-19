@@ -25,7 +25,9 @@ public class VistaAdministrador implements Credenciales{
     public void credencialesNoValidos(){
         System.out.println("Credenciales no validas");
     }
-
+    public void mensajeProyectosOrdenadosPorFecha(){
+        System.out.println("Los proyectos fueron ordenados por fecha");
+    }
     @Override
     public void saludarUsuario() {
         System.out.println("Bienvenido al modo administrador");

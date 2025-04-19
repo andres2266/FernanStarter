@@ -5,7 +5,6 @@ import Modelos.Gestor;
 import Modelos.Inversor;
 import Modelos.Usuario;
 
-
 import java.util.HashMap;
 
 public class GestorDeUsuarios {
