@@ -6,10 +6,7 @@ import Controladores.ControladorInversor;
 import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
-import Vistas.VistaAdministrador;
-import Vistas.VistaGestor;
-import Vistas.VistaInversor;
-import Vistas.VistaProyecto;
+import Vistas.*;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -28,6 +25,9 @@ public class FernanStarter {
         Gestor gestorPorDefecto = new Gestor("Sergi","davidgalan001@gmail.com","1234");
         Inversor inversorPorDefecto = new Inversor("Marcos","davidgalan001@gmail.com","1234");
         Inversor inversorPorDefecto1 = new Inversor("Andresito","davidgalan001@gmail.com","1234");
+
+        /*Preferencias*/
+        Preferencias preps = new Preferencias();
         /*Proyecto por defecto*/
 
         Proyecto proyectoPrueba = new Proyecto("da","da",Categoria.Arte,100,1,LocalDate.of(2000,10,1),LocalDate.of(2000,10,1),"1");
@@ -43,6 +43,7 @@ public class FernanStarter {
         VistaInversor vistaInversor = new VistaInversor();
         VistaGestor vistaGestor = new VistaGestor();
         VistaProyecto vistaProyecto = new VistaProyecto();
+        VistaPreferencias vistaPreferencias =new VistaPreferencias();
 
         GestorDeUsuarios gestorDeUsuarios = new GestorDeUsuarios();
         GestorDeProyecto gestorDeProyecto = new GestorDeProyecto();
@@ -54,11 +55,13 @@ public class FernanStarter {
         ControladorGestor controladorGestor = new ControladorGestor(gestorDeUsuarios,vistaGestor,gestorDeProyecto);
         ControladorInversor controladorInversor = new ControladorInversor(gestorDeUsuarios,vistaInversor);
 
+
         gestorDeUsuarios.agregarUsuarios(administradorPorDefecto);
         gestorDeUsuarios.agregarUsuarios(gestorPorDefecto);
         gestorDeUsuarios.agregarUsuarios(inversorPorDefecto);
         gestorDeUsuarios.agregarUsuarios(inversorPorDefecto1);
 
+        String nombreDeUsuarioAdministrador="";
         String nombreDeUsuarioGestor = "";
         String nombreDeUsuarioInversor = "";
 
@@ -79,12 +82,15 @@ public class FernanStarter {
                 case 1:
                 do {
                     System.out.println("Ingresa tu nombre de usuario");
-                    String nombreDeUsuarioAdministrador = S.next();
+                    nombreDeUsuarioAdministrador = S.next();
                     System.out.println("Ingresa la contraseña del usuario");
                     String contraseñaAdministrador = S.next();
                    credencialesAdmin = controladorAdministrador.inicioDeSecionAdmin(nombreDeUsuarioAdministrador, contraseñaAdministrador);
                 }while (!credencialesAdmin);
-                    while (opcionesDeAdmin !=10 ){
+                    System.out.println(preps.getUltimoInicioSesion(nombreDeUsuarioAdministrador));
+                    preps.setUltimoInicioSesion(nombreDeUsuarioAdministrador);
+                    preps.guardar();
+                    while (opcionesDeAdmin !=11 ){
                         opcionesDeAdmin=menuAdministrador();
                         switch (opcionesDeAdmin) {
                             case 1:
@@ -131,6 +137,12 @@ public class FernanStarter {
                                 idProyecto = S.next();
                                 controladorAdministrador.mostrarInversionistasOrdenadoPorImporte(idProyecto);
                                 break;
+                            case 10:
+                                System.out.println("Habilitación de usuario invitado: (si o no)");
+                                String opcion = S.next();
+                                preps.setSinLoguear(opcion);
+                                preps.guardar();
+                                break;
                         }
 
                     }
@@ -141,7 +153,6 @@ public class FernanStarter {
                         nombreDeUsuarioGestor = S.next();
                         System.out.println("Ingresa la contraseña del usuario");
                         String contraseñaGestor = S.next();
-
                         if(gestorDeUsuarios.buscarUsuario(nombreDeUsuarioGestor).isBloqueado()){
                             controladorGestor.usuarioBloqueado(nombreDeUsuarioGestor);
                             System.out.println("Escribe 1 para cerrar sesión");
@@ -160,7 +171,11 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesGestor);
-                    while (opcionesDeGestor !=13) {
+                    System.out.println(preps.getUltimoInicioSesion(nombreDeUsuarioGestor));
+                    preps.setUltimoInicioSesion(nombreDeUsuarioGestor);
+                    preps.guardar();
+                    while (opcionesDeGestor !=14) {
+
                         switch (opcionesDeGestor = muenuGestor()) {
                             case 1:
                                 controladorGestor.verProyectos(nombreDeUsuarioGestor);
@@ -278,7 +293,6 @@ public class FernanStarter {
                                         break;
                             }
                         }
-
                     }
                     opcionesDeGestor=0;
                     break;
@@ -307,9 +321,11 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesInversor);
+                    System.out.println(preps.getUltimoInicioSesion(nombreDeUsuarioInversor));
+                    preps.setUltimoInicioSesion(nombreDeUsuarioInversor);
+                    preps.guardar();
                     while (opcionesInversor !=10 ) {
-                        opcionesInversor = muenuInversor();
-                        switch (opcionesInversor) {
+                        switch (opcionesInversor=muenuInversor()) {
                             case 1:
                                 controladorInversor.misInversiones(nombreDeUsuarioInversor);
                                 break;
@@ -388,6 +404,19 @@ public class FernanStarter {
                             controladorInversor.añadirInversorAGestorDeUsuarios(Inversor);
                             break;
                     }
+                    break;
+                case 5:
+                    if (!preps.getSinLoguear()) System.out.println("El administrador no tiene activado este usuario");
+                    else {
+                        int opcion=0;
+                        do {
+                            opcion=menuInvitado();
+                            switch (opcion){
+                                case 1 -> controladorDeProyecto.verTodosLosProyectos();
+                            }
+                        }while (opcion!=2);
+                    }
+                    break;
             }
         }
     }

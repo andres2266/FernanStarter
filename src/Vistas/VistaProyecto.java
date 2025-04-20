@@ -27,9 +27,6 @@ public class VistaProyecto {
         if(todosLosProyectos.isEmpty()){
             System.out.println("No se ha creado ningún proyecto");
         }
-
-
-
         for (int i = 0; i <todosLosProyectos.size() ; i++) {
             System.out.println(todosLosProyectos.get(i));
         }

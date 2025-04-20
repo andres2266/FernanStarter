@@ -11,6 +11,7 @@ public class Menus {
         System.out.println("2. Gestor");
         System.out.println("3. Inversor");
         System.out.println("4. Crear nuevo Usuario");
+        System.out.println("5. Usuario Invitado");
         int opcion = Integer.parseInt(S.next());
         return opcion;
     }
@@ -26,7 +27,8 @@ public class Menus {
         System.out.println("7: Ordenar todos los proyectos por fecha");
         System.out.println("8: Ordenar Inversionistas por Nombre según el proyecto");
         System.out.println("9: Ordenar Inversionistas por Importe según el proyecto");
-        System.out.println("10: Cerrar sesión");
+        System.out.println("10: Habilitacion de usuario invitado");
+        System.out.println("11: Cerrar sesión");
         int opcion = Integer.parseInt(S.next());
         return opcion;
     }
@@ -45,7 +47,8 @@ public class Menus {
         System.out.println("10: Ordenar poryectos por orden de fecha ");
         System.out.println("11: Ordenar Inversionistas por Nombre");
         System.out.println("12: Ordenar Inversionistas por Importe");
-        System.out.println("13: Cerrar sesión");
+        System.out.println("13: Modificar Proyectos");
+        System.out.println("14: Cerrar sesión");
         int opcion = S.nextInt();
         return opcion;
     }
@@ -85,6 +88,18 @@ public class Menus {
         System.out.println("2: Crear Inversor");
         int opcion = S.nextInt();
         return opcion;
+
+    }
+
+    public static int menuInvitado() {
+        int opcion=0;
+        do {
+        Scanner S = new Scanner(System.in);
+        System.out.println("1: Ver proyectos");
+        System.out.println("2: Salir");
+        opcion = S.nextInt();
+            return opcion;
+        }while (opcion!=2);
 
     }
 
