@@ -29,7 +29,6 @@ public class FernanStarter {
         Inversor inversorPorDefecto = new Inversor("Marcos","davidgalan001@gmail.com","1234");
         Inversor inversorPorDefecto1 = new Inversor("Andresito","davidgalan001@gmail.com","1234");
         /*Proyecto por defecto*/
-        Inversor inversorPorDefecto1 = new Inversor("Andresito","davidgalan001@gmail.com","1234");
 
         Proyecto proyectoPrueba = new Proyecto("da","da",Categoria.Arte,100,1,LocalDate.of(2000,10,1),LocalDate.of(2000,10,1),"1");
 
@@ -161,7 +160,7 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesGestor);
-                    while (opcionesDeGestor !=14) {
+                    while (opcionesDeGestor !=13) {
                         switch (opcionesDeGestor = muenuGestor()) {
                             case 1:
                                 controladorGestor.verProyectos(nombreDeUsuarioGestor);

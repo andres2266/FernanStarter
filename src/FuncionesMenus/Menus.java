@@ -50,6 +50,8 @@ public class Menus {
         return opcion;
     }
 
+
+
     public static int muenuInversor() {
         Scanner S = new Scanner(System.in);
         System.out.println("1: Ver todas mis inversiones");
@@ -85,5 +87,8 @@ public class Menus {
         return opcion;
 
     }
+
+
+
 }
 
