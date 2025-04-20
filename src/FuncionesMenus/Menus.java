@@ -24,7 +24,9 @@ public class Menus {
         System.out.println("5: Cambios de credenciales");
         System.out.println("6: Ordenar todos los proyectos por orden de invercion");
         System.out.println("7: Ordenar todos los proyectos por fecha");
-        System.out.println("8: Cerrar sesión");
+        System.out.println("8: Ordenar Inversionistas por Nombre según el proyecto");
+        System.out.println("9: Ordenar Inversionistas por Importe según el proyecto");
+        System.out.println("10: Cerrar sesión");
         int opcion = Integer.parseInt(S.next());
         return opcion;
     }
@@ -42,7 +44,7 @@ public class Menus {
         System.out.println("9: Ordenar proyectos por orden de importe financiado");
         System.out.println("10: Ordenar poryectos por orden de fecha ");
         System.out.println("11: Ordenar Inversionistas por Nombre");
-        System.out.println("12: Ordenar Inversionistas por Nombre");
+        System.out.println("12: Ordenar Inversionistas por Importe");
         System.out.println("13: Cerrar sesión");
         int opcion = S.nextInt();
         return opcion;

@@ -1,5 +1,8 @@
 package Vistas;
 
+import Inversión.Inversion;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class VistaAdministrador implements Credenciales{
@@ -81,7 +84,9 @@ public class VistaAdministrador implements Credenciales{
         System.out.println("La fecha de fin fué cambiada");
     }
 
-
+    public void mostrarInversiones(ArrayList<Inversion> Inversiones){
+        for (Inversion inv: Inversiones) System.out.println(inv.getInversor().getNombre()+": "+ inv.getCantidadInvertida());
+    }
 
 
 }

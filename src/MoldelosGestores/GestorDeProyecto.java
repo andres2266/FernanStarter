@@ -48,7 +48,7 @@ public class GestorDeProyecto {
     }
 
     public ArrayList<Inversion> ordenarInversionesPorImporte(ArrayList<Inversion> inversiones){
-        inversiones.sort(Comparator.comparing(persona -> persona.getCantidadInvertida()));
+        inversiones.sort((persona1,persona2) -> (int) (persona2.getCantidadInvertida()-persona1.getCantidadInvertida()));
         return inversiones;
     }
 

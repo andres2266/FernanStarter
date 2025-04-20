@@ -48,12 +48,10 @@ public class ControladorGestor {
         vistaGestor.mensajeDeOrdenacionPorFinanciacion();
     }
     public void mostrarInversionistasOrdenadoPorNombre(String idProyecto){
-
         vistaGestor.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorNombre(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
     }
 
     public void mostrarInversionistasOrdenadoPorImporte(String idProyecto){
-
         vistaGestor.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorImporte(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
     }
 

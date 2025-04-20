@@ -100,6 +100,17 @@ public class ControladorAdministrador {
         gestorDeProyecto.ordenarPorImporteFinanciado(gestorDeProyecto.verArrayDeProyectos());
         vistaAdministrador.mensajeCantidadFinanciada();
     }
+
+    public void mostrarInversionistasOrdenadoPorNombre(String idProyecto){
+
+        vistaAdministrador.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorNombre(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
+    }
+
+    public void mostrarInversionistasOrdenadoPorImporte(String idProyecto){
+
+        vistaAdministrador.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorImporte(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
+    }
+
     public boolean inicioDeSecionAdmin(String nombreDeUsuario, String contraseña) {
         if (gestorDeUsuarios.buscarUsuario( nombreDeUsuario) == null) {
             vistaAdministrador.credencialesNoValidos();

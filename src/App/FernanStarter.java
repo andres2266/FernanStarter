@@ -24,6 +24,7 @@ public class FernanStarter {
         Administrador administradorPorDefecto = new Administrador("Andres","davidgalan001@gmail.com","1234");
         Gestor gestorPorDefecto = new Gestor("Sergi","davidgalan001@gmail.com","1234");
         Inversor inversorPorDefecto = new Inversor("Marcos","davidgalan001@gmail.com","1234");
+        Inversor inversorPorDefecto1 = new Inversor("Andresito","davidgalan001@gmail.com","1234");
 
         Proyecto proyectoPrueba = new Proyecto("da","da",Categoria.Arte,100,1,LocalDate.of(2000,10,1),LocalDate.of(2000,10,1),"1");
 
@@ -47,6 +48,7 @@ public class FernanStarter {
         gestorDeUsuarios.agregarUsuarios(administradorPorDefecto);
         gestorDeUsuarios.agregarUsuarios(gestorPorDefecto);
         gestorDeUsuarios.agregarUsuarios(inversorPorDefecto);
+        gestorDeUsuarios.agregarUsuarios(inversorPorDefecto1);
 
         String nombreDeUsuarioGestor = "";
         String nombreDeUsuarioInversor = "";
@@ -73,7 +75,7 @@ public class FernanStarter {
                     String contraseñaAdministrador = S.next();
                    credencialesAdmin = controladorAdministrador.inicioDeSecionAdmin(nombreDeUsuarioAdministrador, contraseñaAdministrador);
                 }while (!credencialesAdmin);
-                    while (opcionesDeAdmin !=8 ){
+                    while (opcionesDeAdmin !=10 ){
                         opcionesDeAdmin=menuAdministrador();
                         switch (opcionesDeAdmin) {
                             case 1:
@@ -110,8 +112,17 @@ public class FernanStarter {
                             case 7:
                                 controladorAdministrador.ordenarPorFecha();
                                 break;
+                            case 8:
+                                System.out.println("Escribe el id del proyecto que quieras ordenar por el nombre los inversores");
+                                String idProyecto = S.next();
+                                controladorAdministrador.mostrarInversionistasOrdenadoPorNombre(idProyecto);
+                                break;
+                            case 9:
+                                System.out.println("Escribe el id del proyecto que quieras ordenar por el importe los inversores");
+                                idProyecto = S.next();
+                                controladorAdministrador.mostrarInversionistasOrdenadoPorImporte(idProyecto);
+                                break;
                         }
-
                     }
                     break;
                 case 2:
@@ -181,12 +192,15 @@ public class FernanStarter {
                                 controladorGestor.crearProyecto(nombre,descripcion,Categoria.valueOf(categoria),cantidadNecesaria,cantidadFinanciada,fechaInicio,fechaDeFin,id,nombreDeUsuarioGestor);
                                 break;
                             case 3:
+                                System.out.println("Escribe tu nombre de usuario");
+                                String nombreUsuario=S.next();
+                                controladorGestor.verProyectos(nombreUsuario);
+                                break;
+                            case 4:
                                 System.out.println("Escribe id de proyecto que quieres eliminar");
                                 String proyectoId = S.next();
                                 controladorGestor.eliminarProyecto(proyectoId,nombreDeUsuarioGestor);
                                 break;
-                            case 4:
-
                             case 5:
                                 System.out.println("Escribe tu nuevo nombre de usuario");
                                 String nuevoNombreDeUsuario = S.next();
@@ -235,7 +249,7 @@ public class FernanStarter {
                             case 12:
                                 System.out.println("Escribe el id del proyecto que quieras ordenar por el importe los inversores");
                                 idProyecto = S.next();
-                                controladorGestor.mostrarInversionistasOrdenadoPorNombre(idProyecto);
+                                controladorGestor.mostrarInversionistasOrdenadoPorImporte(idProyecto);
                                 break;
                         }
 
