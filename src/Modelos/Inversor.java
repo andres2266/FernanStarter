@@ -1,6 +1,7 @@
 package Modelos;
 
 import Inversión.Inversion;
+import MoldelosGestores.GestorDeProyecto;
 
 import java.util.ArrayList;
 
@@ -10,9 +11,9 @@ public class Inversor extends Usuario {
     private ArrayList<Amigo> amigos;
     private boolean usuarioBloqueado;
 
-    public Inversor(String nombre, String correo, String contraseña,int cartera) {
+    public Inversor(String nombre, String correo, String contraseña) {
         super(nombre, correo, contraseña);
-        this.cartera = cartera;
+        this.cartera = 0;
         usuarioBloqueado = false;
         inversionesRealizadas = new ArrayList<>();
     }
@@ -62,6 +63,7 @@ public class Inversor extends Usuario {
 
     public void invertir(Inversion inversion){
         inversionesRealizadas.add(inversion);
+
     }
 
 

@@ -1,9 +1,11 @@
 package MoldelosGestores;
 
+import Inversión.Inversion;
 import Modelos.Proyecto;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class GestorDeProyecto {
     ArrayList<Proyecto>gestorProyecto;
@@ -38,6 +40,16 @@ public class GestorDeProyecto {
 
     public void ordenarPorImporteFinanciado(ArrayList<Proyecto> proyecrtos){
             proyecrtos.sort((a , b) -> (b.getCantidadFinanciada()-a.getCantidadFinanciada()));
+    }
+
+    public ArrayList<Inversion> ordenarInversionesPorNombre(ArrayList<Inversion> inversiones){
+        inversiones.sort(Comparator.comparing(persona -> persona.getInversor().getNombre()));
+        return inversiones;
+    }
+
+    public ArrayList<Inversion> ordenarInversionesPorImporte(ArrayList<Inversion> inversiones){
+        inversiones.sort(Comparator.comparing(persona -> persona.getCantidadInvertida()));
+        return inversiones;
     }
 
     public ArrayList<Proyecto> verArrayDeProyectos(){

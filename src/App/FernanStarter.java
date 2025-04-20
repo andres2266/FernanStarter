@@ -21,9 +21,11 @@ public class FernanStarter {
 
         Scanner S = new Scanner(System.in);
         /*Usuarios por defecto*/
-        Administrador administradorPorDefecto = new Administrador("Andres","andrevelezg42@gmail.com","1234");
-        Gestor gestorPorDefecto = new Gestor("Sergi","andrevelezg42@gmail.com","1234");
-        Inversor inversorPorDefecto = new Inversor("Marcos","andrevelezg42@gmail.com","1234",0);
+        Administrador administradorPorDefecto = new Administrador("Andres","davidgalan001@gmail.com","1234");
+        Gestor gestorPorDefecto = new Gestor("Sergi","davidgalan001@gmail.com","1234");
+        Inversor inversorPorDefecto = new Inversor("Marcos","davidgalan001@gmail.com","1234");
+
+        Proyecto proyectoPrueba = new Proyecto("da","da",Categoria.Arte,100,1,LocalDate.of(2000,10,1),LocalDate.of(2000,10,1),"1");
 
         System.out.println(gestorPorDefecto);
 
@@ -35,6 +37,7 @@ public class FernanStarter {
         GestorDeUsuarios gestorDeUsuarios = new GestorDeUsuarios();
         GestorDeProyecto gestorDeProyecto = new GestorDeProyecto();
 
+        gestorDeProyecto.añadirProyecto(proyectoPrueba);
 
         ControladorAdministrador controladorAdministrador = new ControladorAdministrador(gestorDeUsuarios, vistaAdministrador,gestorDeProyecto);
         ControladorDeProyecto controladorDeProyecto = new ControladorDeProyecto(gestorDeProyecto, vistaProyecto);
@@ -110,7 +113,6 @@ public class FernanStarter {
                         }
 
                     }
-                    opcionesDeAdmin =0;
                     break;
                 case 2:
                     do {
@@ -137,7 +139,7 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesGestor);
-                    while (opcionesDeGestor !=11) {
+                    while (opcionesDeGestor !=13) {
                         switch (opcionesDeGestor = muenuGestor()) {
                             case 1:
                                 controladorGestor.verProyectos(nombreDeUsuarioGestor);
@@ -225,10 +227,20 @@ public class FernanStarter {
                                 String NombreDeusuarioDeGestor = S.next();
                                 controladorGestor.ordenarPorFecha(NombreDeusuarioDeGestor);
                                 break;
+                            case 11:
+                                System.out.println("Escribe el id del proyecto que quieras ordenar por el nombre los inversores");
+                                String idProyecto = S.next();
+                                controladorGestor.mostrarInversionistasOrdenadoPorNombre(idProyecto);
+                                break;
+                            case 12:
+                                System.out.println("Escribe el id del proyecto que quieras ordenar por el importe los inversores");
+                                idProyecto = S.next();
+                                controladorGestor.mostrarInversionistasOrdenadoPorNombre(idProyecto);
+                                break;
                         }
 
                     }
-                    opcionesDeGestor = 0;
+                    opcionesDeGestor=0;
                     break;
                 case 3 :
                     do {
@@ -255,7 +267,7 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesInversor);
-                    while (opcionesInversor !=11 ) {
+                    while (opcionesInversor !=10 ) {
                         opcionesInversor = muenuInversor();
                         switch (opcionesInversor) {
                             case 1:
@@ -275,7 +287,7 @@ public class FernanStarter {
                             case 5:
                                 System.out.println("¿Cuánto quieres restar a la cartera?");
                                 int restarACartera = S.nextInt();
-                                controladorInversor.restarCreditoAcartera(restarACartera, nombreDeUsuarioGestor);
+                                controladorInversor.restarCreditoAcartera(restarACartera, nombreDeUsuarioInversor);
                             case 6:
                                 System.out.println("Escribe tu nuevo nombre de usuario");
                                 String nuevoNombreDeUsuario = S.next();
@@ -311,7 +323,7 @@ public class FernanStarter {
 
                         }
                     }
-                    opcionesDeAdmin = 0;
+                    opcionesInversor = 0;
                         break;
                 case 4:
                     switch (muenuCreacionUsuarios()){
@@ -332,7 +344,7 @@ public class FernanStarter {
                             String contraseñaInversor = S.next();
                             System.out.print("Ingrese su correo electrónico: ");
                             String correoInversor = S.next();
-                            Gestor Inversor = new Gestor(nombreInversor,correoInversor,contraseñaInversor);
+                            Inversor Inversor = new Inversor(nombreInversor,correoInversor,contraseñaInversor);
                             controladorInversor.añadirInversorAGestorDeUsuarios(Inversor);
                             break;
                     }

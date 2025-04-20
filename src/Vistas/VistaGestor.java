@@ -1,5 +1,6 @@
 package Vistas;
 
+import Inversión.Inversion;
 import Modelos.Proyecto;
 
 import java.util.ArrayList;
@@ -105,4 +106,7 @@ public class VistaGestor implements Credenciales {
         System.out.println("3: Cerrar sesión");
     }
 
+    public void mostrarInversiones(ArrayList<Inversion> Inversiones){
+        for (Inversion inv: Inversiones) System.out.println(inv.getInversor().getNombre()+": "+ inv.getCantidadInvertida());
+    }
 }

@@ -1,12 +1,14 @@
 package Controladores;
 
 import FuncionesDeCorreo.FuncionesDeCorreo;
+import Inversión.Inversion;
 import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaGestor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class ControladorGestor {
     private GestorDeUsuarios gestorDeUsuarios;
@@ -45,6 +47,16 @@ public class ControladorGestor {
        gestorDeProyecto.ordenarPorImporteFinanciado(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectosDeGestor());
         vistaGestor.mensajeDeOrdenacionPorFinanciacion();
     }
+    public void mostrarInversionistasOrdenadoPorNombre(String idProyecto){
+
+        vistaGestor.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorNombre(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
+    }
+
+    public void mostrarInversionistasOrdenadoPorImporte(String idProyecto){
+
+        vistaGestor.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorImporte(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
+    }
+
     public Proyecto BuscarProyecto(String idProyecto,String nombreDeUsuario){
         if(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).buscarProyectosDeGestor(idProyecto)==null){
             vistaGestor.mensajeProyectoNoEncontrado();

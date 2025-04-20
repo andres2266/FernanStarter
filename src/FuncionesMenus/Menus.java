@@ -41,7 +41,9 @@ public class Menus {
         System.out.println("8: Ver recompensas de proyecto");
         System.out.println("9: Ordenar proyectos por orden de importe financiado");
         System.out.println("10: Ordenar poryectos por orden de fecha ");
-        System.out.println("11: Cerrar sesión");
+        System.out.println("11: Ordenar Inversionistas por Nombre");
+        System.out.println("12: Ordenar Inversionistas por Nombre");
+        System.out.println("13: Cerrar sesión");
         int opcion = S.nextInt();
         return opcion;
     }
@@ -57,6 +59,7 @@ public class Menus {
         System.out.println("7: Añadir amigos");
         System.out.println("8: Cambiar credenciales");
         System.out.println("9: Invertir");
+        System.out.println("10: Salir");
         int opcion = S.nextInt();
         return opcion;
     }

@@ -1,6 +1,7 @@
 package Modelos;
 
 import Inversión.Inversion;
+import MoldelosGestores.GestorDeProyecto;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -120,6 +121,10 @@ public class Proyecto implements Inversible {
 
     public LocalDate getFechaDeApertura() {
         return fechaDeApertura;
+    }
+
+    public void añadirInversionEnProyecto(Inversion inversion){
+        invercionesRealizadas.add(inversion);
     }
 
     @Override
