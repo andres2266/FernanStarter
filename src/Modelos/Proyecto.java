@@ -84,6 +84,9 @@ public class Proyecto implements Inversible {
         }
     }
 
+    public void añadirInvercion(Inversion inversion){
+        invercionesRealizadas.add(inversion);
+    }
 
     public String getNombre() {
         return nombre;

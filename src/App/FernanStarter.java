@@ -11,6 +11,9 @@ import Vistas.VistaGestor;
 import Vistas.VistaInversor;
 import Vistas.VistaProyecto;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -25,10 +28,17 @@ public class FernanStarter {
         Gestor gestorPorDefecto = new Gestor("Sergi","davidgalan001@gmail.com","1234");
         Inversor inversorPorDefecto = new Inversor("Marcos","davidgalan001@gmail.com","1234");
         Inversor inversorPorDefecto1 = new Inversor("Andresito","davidgalan001@gmail.com","1234");
+        /*Proyecto por defecto*/
+        Inversor inversorPorDefecto1 = new Inversor("Andresito","davidgalan001@gmail.com","1234");
 
         Proyecto proyectoPrueba = new Proyecto("da","da",Categoria.Arte,100,1,LocalDate.of(2000,10,1),LocalDate.of(2000,10,1),"1");
 
         System.out.println(gestorPorDefecto);
+
+
+        /*Bufer para escribir el los registros del programa*/
+
+
 
         VistaAdministrador vistaAdministrador = new VistaAdministrador();
         VistaInversor vistaInversor = new VistaInversor();
@@ -123,6 +133,7 @@ public class FernanStarter {
                                 controladorAdministrador.mostrarInversionistasOrdenadoPorImporte(idProyecto);
                                 break;
                         }
+
                     }
                     break;
                 case 2:
@@ -150,7 +161,7 @@ public class FernanStarter {
                             }
                         }
                     }while (!credencialesGestor);
-                    while (opcionesDeGestor !=13) {
+                    while (opcionesDeGestor !=14) {
                         switch (opcionesDeGestor = muenuGestor()) {
                             case 1:
                                 controladorGestor.verProyectos(nombreDeUsuarioGestor);
@@ -251,6 +262,22 @@ public class FernanStarter {
                                 idProyecto = S.next();
                                 controladorGestor.mostrarInversionistasOrdenadoPorImporte(idProyecto);
                                 break;
+                            case 13:
+                                int opciones = MenuModificarProyecto();
+                                switch (opciones){
+                                    case 1:
+                                        System.out.println("Escibe el id del proyecto al que quieres cambiar su nombre");
+                                        String idProyectoCambioDeNombre = S.next();
+                                        System.out.println("Escribe el nuevo nombre de proyecto");
+                                        String nuevoNombre = S.next();
+                                        controladorGestor.modificarnNombreDeProyecto(idProyectoCambioDeNombre, nuevoNombre);
+                                        try {
+                                            BufferedWriter bf = new BufferedWriter(new FileWriter("RegistrosDeApp/logs.txt"));
+                                        }catch (IOException e){
+                                            System.out.println("Fichero no encontrado");
+                                        }
+                                        break;
+                            }
                         }
 
                     }

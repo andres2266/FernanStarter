@@ -100,7 +100,6 @@ public class ControladorInversor {
         }else{
             Inversion nuevaInversion = new Inversion(proyecto,cantidad,fechaDeInversion, (Inversor) gestorDeUsuarios.buscarUsuario(nombreDeUsuario));
             gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).invertir(nuevaInversion);
-            proyecto.añadirInversionEnProyecto(nuevaInversion);
         }
     }
 

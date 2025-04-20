@@ -66,6 +66,16 @@ public class Menus {
         return opcion;
     }
 
+    public static int MenuModificarProyecto(){
+        Scanner S = new Scanner(System.in);
+        System.out.println("1: Cambiar nombre de proyecto");
+        System.out.println("2: Cambiar descripcion de proyecto");
+        System.out.println("3: Cambiar categoria del proyecto");
+        System.out.println("4: Cambiar la cantidad necesaria para financiar el proyecto");
+        System.out.println("5: Cambiar fecha fecha de fin");
+        int opcion = S.nextInt();
+        return opcion;
+    }
 
     public static int muenuCreacionUsuarios() {
         Scanner S = new Scanner(System.in);
