@@ -63,7 +63,9 @@ public class Inversor extends Usuario {
 
     public void invertir(Inversion inversion){
         inversionesRealizadas.add(inversion);
-
+    }
+    public Inversion verUltimaInversion(){
+        return inversionesRealizadas.get(inversionesRealizadas.size()-1);
     }
 
 

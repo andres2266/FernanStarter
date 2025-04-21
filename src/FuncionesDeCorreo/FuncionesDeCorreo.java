@@ -17,7 +17,7 @@ public class FuncionesDeCorreo {
 
     public FuncionesDeCorreo(String correoDestinatario) {
         FuncionesDeCorreo.correoDestinatario = correoDestinatario;
-        codigoDeCorreo = String.valueOf((int)(Math.random()*9999));
+        codigoDeCorreo = String.valueOf((int)(Math.random()*9000)+1000);
         asuntoCorreo = "Codigo de verificacion";
         enviarConGMail(correoDestinatario,asuntoCorreo,codigoDeCorreo);
     }

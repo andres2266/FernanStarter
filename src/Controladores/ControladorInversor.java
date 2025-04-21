@@ -107,6 +107,10 @@ public class ControladorInversor {
         gestorDeUsuarios.buscarUsuario(nombreDeGestor).setBloqueado(true);
     }
 
+    public Inversion verInvercionesRealizadas(String nombreDeUsuario){
+        return gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verUltimaInversion();
+    }
+
     public void añadirInversorAGestorDeUsuarios(Usuario Gestor){
         gestorDeUsuarios.agregarUsuarios(Gestor);
     }

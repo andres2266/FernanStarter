@@ -59,6 +59,13 @@ public class Proyecto implements Inversible {
         this.cantidadFinanciada = cantidadFinanciada;
     }
 
+    public int getCantidadNecesaria(){
+        return (int) cantidadNecesaria;
+    }
+    public String getIdPorProyecto(){
+        return id;
+    }
+
     public void setFechaDeApertura(LocalDate fechaDeApertura) {
         this.fechaDeApertura = fechaDeApertura;
     }
@@ -75,6 +82,9 @@ public class Proyecto implements Inversible {
         return recompensas;
     }
 
+    public Inversion verUltimaInversion(){
+       return invercionesRealizadas.get(invercionesRealizadas.size());
+    }
 
     public void modificarRecompensa(RecompensasDeProyecto nuevaRecompensa, String idRecompensa){
         for (int i = 0; i <recompensas.size() ; i++) {
@@ -133,12 +143,12 @@ public class Proyecto implements Inversible {
     @Override
     public String toString() {
         return "El nombre del proyecto es " + nombre +
-                ", su descripción es " + descripcion +
-                ". Pertenece a la categoría " + categoria +
-                ". Se necesita una cantidad de " + cantidadNecesaria +
-                " y hasta ahora se ha financiado " + cantidadFinanciada +
-                ". La fecha de apertura fue " + fechaDeApertura +
-                " y la fecha de finalización es " + fechaDeFin +
-                ". Las recompensas ofrecidas son de " + recompensas;
+                "\n su descripción es " + descripcion +
+                "\n Pertenece a la categoría " + categoria +
+                "\n Se necesita una cantidad de " + cantidadNecesaria +
+                "\n hasta ahora se ha financiado " + cantidadFinanciada +
+                "\n La fecha de apertura fue " + fechaDeApertura +
+                "\n la fecha de finalización es " + fechaDeFin +
+                "\n Las recompensas ofrecidas son de " + recompensas;
     }
 }

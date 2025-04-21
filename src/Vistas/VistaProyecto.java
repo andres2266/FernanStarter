@@ -19,6 +19,9 @@ public class VistaProyecto {
             System.out.println(recompensasDeProyectos.get(i));
         }
     }
+    public void verUnProyecto(Proyecto proyecto){
+        System.out.println(proyecto);
+    }
 
     public void mensajeDeOrdenacionPorFinanciacion(){
         System.out.println("El array fue ordenado por orden de el que tenga la finacicion mas alta");

@@ -47,7 +47,7 @@ public class Menus {
         System.out.println("10: Ordenar poryectos por orden de fecha ");
         System.out.println("11: Ordenar Inversionistas por Nombre");
         System.out.println("12: Ordenar Inversionistas por Importe");
-        System.out.println("13: Modificar Proyectos");
+        System.out.println("13: Modificar Proyecto");
         System.out.println("14: Cerrar sesión");
         int opcion = S.nextInt();
         return opcion;

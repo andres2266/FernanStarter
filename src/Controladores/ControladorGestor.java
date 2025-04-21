@@ -1,14 +1,13 @@
 package Controladores;
 
 import FuncionesDeCorreo.FuncionesDeCorreo;
-import Inversión.Inversion;
 import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaGestor;
+import Vistas.VistaProyecto;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class ControladorGestor {
     private GestorDeUsuarios gestorDeUsuarios;
@@ -55,6 +54,10 @@ public class ControladorGestor {
         vistaGestor.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorImporte(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
     }
 
+    public void mostrarGraficoBarras(String idProyecto){
+        vistaGestor.mostrarGraficoBarras(gestorDeProyecto.contarGraficoBarras(gestorDeProyecto.buscarProyecto(idProyecto)));
+    }
+
     public Proyecto BuscarProyecto(String idProyecto,String nombreDeUsuario){
         if(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).buscarProyectosDeGestor(idProyecto)==null){
             vistaGestor.mensajeProyectoNoEncontrado();
@@ -83,9 +86,14 @@ public class ControladorGestor {
         vistaGestor.mensajeCantidadFinanciada();
     }
 
-    public void modificarFechaDeApertura(LocalDate fechaDeApertura, String nombreDeUsuario) {
-        gestorDeProyecto.buscarProyecto(nombreDeUsuario).setFechaDeApertura(fechaDeApertura);
+    public void modificarFechaDeApertura(LocalDate fechaDeApertura, String idProyecto) {
+        gestorDeProyecto.buscarProyecto(idProyecto).setFechaDeApertura(fechaDeApertura);
         vistaGestor.mensajeFechaDeApertura();
+    }
+
+    public void modificarCategoria(Categoria nuevaCategoria,String idDeProyecto){
+        gestorDeProyecto.buscarProyecto(idDeProyecto).setCategoria(nuevaCategoria);
+        vistaGestor.mensajeCambioDeCambioDeCategoria();
     }
 
     public void modificarRecompensas(String idDeProyecto, RecompensasDeProyecto NuevarecompensasDeProyecto, String idRecompesa) {
@@ -98,8 +106,8 @@ public class ControladorGestor {
         vistaGestor.mensajeFechaDeFin();
     }
 
-    public void modificarDescripcionDeProyecto(String descripcion, String nombreDeUsuario) {
-        gestorDeProyecto.buscarProyecto(nombreDeUsuario).setDescripcion(descripcion);
+    public void modificarDescripcionDeProyecto(String descripcion, String idProyecto) {
+        gestorDeProyecto.buscarProyecto(idProyecto).setDescripcion(descripcion);
         vistaGestor.mensajeDeCambioDeDescripcion();
     }
 
@@ -107,12 +115,12 @@ public class ControladorGestor {
         return gestorDeUsuarios;
     }
 
-    public boolean inicioDeSecionGestor(String nombreDeUsuario, String contraseña) {
-        if (gestorDeUsuarios.buscarUsuario(nombreDeUsuario) == null) {
+    public boolean inicioDeSecionGestor(String idProyecto, String contraseña) {
+        if (gestorDeUsuarios.buscarUsuario(idProyecto) == null) {
             vistaGestor.idNoValido();
             return false;
-        } else if (gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getContraseña().equals(contraseña)) {
-            FuncionesDeCorreo codigo = new FuncionesDeCorreo(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getCorreo());
+        } else if (gestorDeUsuarios.buscarUsuario(idProyecto).getContraseña().equals(contraseña)) {
+            FuncionesDeCorreo codigo = new FuncionesDeCorreo(gestorDeUsuarios.buscarUsuario(idProyecto).getCorreo());
             if(codigo.getCodigoDeCorreo().equals(vistaGestor.inicioDeSecionCodigo())){
                 vistaGestor.saludarUsuario();
                 return true;

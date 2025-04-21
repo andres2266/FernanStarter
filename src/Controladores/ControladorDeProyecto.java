@@ -1,5 +1,6 @@
 package Controladores;
 
+import Modelos.Proyecto;
 import Modelos.RecompensasDeProyecto;
 import MoldelosGestores.GestorDeProyecto;
 import Vistas.VistaProyecto;
@@ -25,6 +26,10 @@ public class ControladorDeProyecto {
         vistaProyecto.mensajeRecompensaAgregada();
     }
 
+    public void verUnProyecto(Proyecto proyecto){
+        vistaProyecto.verUnProyecto(proyecto);
+    }
+
     public  void verRecompensasDeProyecto(String idDeProyecto){
         if(gestorDeProyecto.buscarProyecto(idDeProyecto).getId().equals(idDeProyecto)){
             vistaProyecto.verRecompensaDeProyecto(gestorDeProyecto.buscarProyecto(idDeProyecto).verArrayDeProyecto());
@@ -37,19 +42,5 @@ public class ControladorDeProyecto {
         vistaProyecto.mensajeDeOrdenacionPorFinanciacion();
     }
 
-    public void grafico(String id){
-        float sumaTotalDeCantidadesInvertidas = 0;
-        ArrayList<Float>cantidadesInvertidas = new ArrayList<>();
-        if(gestorDeProyecto.buscarProyecto(id)==null){
-            vistaProyecto.mensajeProyectoNoEncontrado();
-        }
-        int cantidadDeInversores = gestorDeProyecto.buscarProyecto(id).cantidadDeInversores();
-        for (int i = 0; i <cantidadDeInversores ; i++) {
-           cantidadesInvertidas.add(gestorDeProyecto.buscarProyecto(id).verInversion(i).getCantidadInvertida());
-        }
-        for (int i = 0; i <cantidadesInvertidas.size() ; i++) {
-            sumaTotalDeCantidadesInvertidas += cantidadesInvertidas.get(i);
-        }
-    }
 
 }
