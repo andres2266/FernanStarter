@@ -18,8 +18,8 @@ public class Inversion {
         this.inversor = inversor;
     }
 
-    public float getCantidadInvertida() {
-        return cantidadInvertida;
+    public int getCantidadInvertida() {
+        return (int)cantidadInvertida;
     }
 
     public Proyecto getProyecto1() {
@@ -33,7 +33,7 @@ public class Inversion {
     @Override
     public String toString() {
         return "Inversion{" +
-                "proyecto=" + proyecto1 +
+                "proyecto=" + proyecto1.getNombre() +
                 ", cantidadInvertida=" + cantidadInvertida +
                 ", fechaDeInversion=" + fechaDeInversion +
                 ", inversor=" + inversor +
