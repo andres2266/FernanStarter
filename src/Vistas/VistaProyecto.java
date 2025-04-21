@@ -23,6 +23,7 @@ public class VistaProyecto {
         System.out.println(proyecto);
     }
 
+
     public void mensajeDeOrdenacionPorFinanciacion(){
         System.out.println("El array fue ordenado por orden de el que tenga la finacicion mas alta");
     }
