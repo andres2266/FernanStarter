@@ -1,0 +1,19 @@
+
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-21T21:01:59.707871100
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-04-21T23:00:14.407248200
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-04-21T23:01:15.882250200
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-21T23:01:56.084682100
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-21T23:04:36.364598700
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-04-21T23:05:17.966558700
