@@ -1,10 +1,11 @@
 package FuncionesMenus;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Menus {
+public class Menus implements Serializable {
 
-    public static int menuPrincipal() {
+    public static int menuPrincipal()  {
         Scanner S = new Scanner(System.in);
         System.out.println("Cómo quieres acceder al sistema?");
         System.out.println("1. Administrador");

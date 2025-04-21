@@ -1,8 +1,9 @@
 package FuncionesDeCadenas;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Cadenas {
+public class Cadenas implements Serializable {
     public static boolean ConfirmaContra (String contraseña1 ,String contraseña2){
             if (contraseña1.equals(contraseña2)){
                 return true;

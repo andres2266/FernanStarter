@@ -8,12 +8,14 @@ import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import static FuncionesMenus.Menus.*;
 
-public class FernanStarter {
+public class FernanStarter implements Serializable {
     public static void main(String[] args) {
 
         Scanner S = new Scanner(System.in);
@@ -52,7 +54,7 @@ public class FernanStarter {
         ControladorInversor controladorInversor = new ControladorInversor(gestorDeUsuarios, vistaInversor);
 
         Logs logs = new Logs();
-
+        Persistencia persistencia = new Persistencia();
 
         gestorDeUsuarios.agregarUsuarios(administradorPorDefecto);
         gestorDeUsuarios.agregarUsuarios(gestorPorDefecto);
@@ -74,8 +76,10 @@ public class FernanStarter {
         boolean credencialesAdmin = false;
         boolean credencialesGestor = false;
         boolean credencialesInversor = false;
-
+        gestorDeProyecto.setGestorProyecto(persistencia.imprimirProyectos());
+        gestorDeUsuarios.setGestorDeUsuarios(persistencia.imprimirObjeto());
         while (opcionesDeMenu != 7) {
+
             switch (opcionesDeMenu = menuPrincipal()) {
                 case 1:
                     do {
@@ -144,6 +148,7 @@ public class FernanStarter {
                                     break;
                             }
                         }
+                    persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
                         logs.RegistroDeCierreDeSesion();
                         opcionesDeAdmin = 0;
                         break;
@@ -216,6 +221,7 @@ public class FernanStarter {
                                             LocalDate fechaDeFin = LocalDate.of(yearFin, monthFin, dayFin);
                                             controladorGestor.crearProyecto(nombre, descripcion, Categoria.valueOf(categoria), cantidadNecesaria, cantidadFinanciada, fechaInicio, fechaDeFin, id, nombreDeUsuarioGestor);
                                             logs.RegistroDeCreacionDeProyecto(nombreDeUsuarioGestor, gestorDeProyecto.buscarProyecto(id).toString());
+                                            persistencia.guardarProyectos(gestorDeProyecto.verArrayDeProyectos());
                                             break;
                                         case 3:
                                             System.out.println("Escribe id de proyecto que quieres eliminar");
@@ -324,6 +330,7 @@ public class FernanStarter {
                                             }
                                     }
                                 }
+                            persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
                                 opcionesDeGestor = 0;
                                 break;
                                 case 3:
@@ -410,6 +417,7 @@ public class FernanStarter {
                                                 break;
                                         }
                                     }
+                                    persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
                                     logs.RegistroDeCierreDeSesion();
                                     opcionesInversor = 0;
                                     break;
@@ -424,6 +432,7 @@ public class FernanStarter {
                                             String correoGestor = S.next();
                                             Gestor gestor = new Gestor(nombreGestor, correoGestor, contraseñaGestor);
                                             controladorGestor.añadirGestorAGestorDeUsuarios(gestor);
+                                            persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
                                             break;
                                         case 2:
                                             System.out.print("Ingrese su nombre: ");
@@ -434,6 +443,7 @@ public class FernanStarter {
                                             String correoInversor = S.next();
                                             Inversor Inversor = new Inversor(nombreInversor, correoInversor, contraseñaInversor);
                                             controladorInversor.añadirInversorAGestorDeUsuarios(Inversor);
+                                            persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
                                             break;
                                     }
                                     break;

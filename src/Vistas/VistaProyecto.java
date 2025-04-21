@@ -3,9 +3,10 @@ package Vistas;
 import Modelos.Proyecto;
 import Modelos.RecompensasDeProyecto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class VistaProyecto {
+public class VistaProyecto implements Serializable {
     public void nombre(){System.out.println("Escribe el nombre del proyecto");}
 
     public void mensajeProyectoNoEncontrado(){System.out.println("El proyecto que estas buscando no existe");}

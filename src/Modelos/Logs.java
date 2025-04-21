@@ -3,9 +3,10 @@ package Modelos;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Logs {
+public class Logs implements Serializable {
     public void registroDeCambioDeNombre(String nombreDeUsuarioGestor,String idProyectoCambioDeNombre,String nuevoNombre){
         try {
             BufferedWriter bf = new BufferedWriter(new FileWriter("RegistrosDeApp/logs.txt",true));

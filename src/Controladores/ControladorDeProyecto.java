@@ -5,9 +5,10 @@ import Modelos.RecompensasDeProyecto;
 import MoldelosGestores.GestorDeProyecto;
 import Vistas.VistaProyecto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ControladorDeProyecto {
+public class ControladorDeProyecto implements Serializable {
     private GestorDeProyecto gestorDeProyecto;
     private VistaProyecto vistaProyecto;
 

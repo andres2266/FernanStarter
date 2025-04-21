@@ -1,6 +1,8 @@
 package Vistas;
 
-public class VistaPreferencias {
+import java.io.Serializable;
+
+public class VistaPreferencias implements Serializable {
 
     public void mensajeErrorArchivoCargado(){
         System.out.println("No se encuentra el archivo .properties");

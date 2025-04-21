@@ -3,10 +3,11 @@ package Modelos;
 import Inversión.Inversion;
 import MoldelosGestores.GestorDeProyecto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Proyecto implements Inversible {
+public class Proyecto implements Inversible , Serializable {
     private String id;
     private String nombre;
     private String descripcion;

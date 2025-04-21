@@ -132,4 +132,20 @@
  la fecha inicio de sesion fue 2025-04-22T00:57:33.058459
  inicio de sesion realizado por javier el cuel es Gestor
 
- la fecha inicio de sesion fue 2025-04-22T01:19:35.140378900
+ la fecha inicio de sesion fue 2025-04-22T01:37:37.851819500
+ Se ha creado un proyecto el cual es El nombre del proyecto es pepe
+ su descripción es pepe
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 1000.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-01-01
+ la fecha de finalización es 2000-01-01
+ Las recompensas ofrecidas son de [] el cual fue creador por javier
+
+ la fecha en la que se creo el proyecto fue 2025-04-22T01:38:26.843381600
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T01:39:49.734101600
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T02:34:26.272372700

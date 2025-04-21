@@ -3,9 +3,10 @@ package Modelos;
 import Inversión.Inversion;
 import MoldelosGestores.GestorDeProyecto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Inversor extends Usuario {
+public class Inversor extends Usuario  implements Serializable {
     private ArrayList<Inversion>inversionesRealizadas;
     private int cartera ;
     private ArrayList<Amigo> amigos;

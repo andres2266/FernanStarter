@@ -5,11 +5,12 @@ import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaGestor;
-import Vistas.VistaProyecto;
 
+
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ControladorGestor {
+public class ControladorGestor  implements Serializable {
     private GestorDeUsuarios gestorDeUsuarios;
     private VistaGestor vistaGestor;
     private GestorDeProyecto gestorDeProyecto;

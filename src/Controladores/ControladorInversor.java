@@ -7,9 +7,11 @@ import Modelos.Proyecto;
 import Modelos.Usuario;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaInversor;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ControladorInversor {
+public class ControladorInversor implements Serializable {
     private GestorDeUsuarios gestorDeUsuarios;
     private VistaInversor vistaInversor;
 
