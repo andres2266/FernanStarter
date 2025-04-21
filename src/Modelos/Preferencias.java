@@ -4,11 +4,12 @@ import Vistas.VistaPreferencias;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
-public class Preferencias {
+public class Preferencias implements Serializable {
     private final String archivo = "RegistrosDeApp/.properties";
     private Properties props = new Properties();
     VistaPreferencias vistaPreferencias =new VistaPreferencias();

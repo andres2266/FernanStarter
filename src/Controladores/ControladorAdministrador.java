@@ -7,9 +7,10 @@ import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaAdministrador;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ControladorAdministrador {
+public class ControladorAdministrador implements Serializable {
     private GestorDeUsuarios gestorDeUsuarios;
     private VistaAdministrador vistaAdministrador;
     private GestorDeProyecto gestorDeProyecto;

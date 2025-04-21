@@ -5,9 +5,10 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.Serializable;
 import java.util.Properties;
 
-public class FuncionesDeCorreo {
+public class FuncionesDeCorreo implements Serializable {
 
     private static String correoRemitente = "andrevelezg42@gmail.com";
     private static String correoDestinatario;

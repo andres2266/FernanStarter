@@ -1,5 +1,5 @@
 package Modelos;
 
-public interface CerrarCesion {
+public interface CerrarCesion  {
     void cerrarSecion();
 }

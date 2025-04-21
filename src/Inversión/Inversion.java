@@ -3,9 +3,10 @@ package Inversión;
 import Modelos.Inversor;
 import Modelos.Proyecto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Inversion {
+public class Inversion implements Serializable {
     private Proyecto proyecto1;
     private float cantidadInvertida;
     private LocalDate fechaDeInversion;

@@ -1,10 +1,12 @@
 package Modelos;
 
 
+import java.io.Serializable;
+
 import static FuncionesDeCadenas.Cadenas.FortalezaContraseña;
 
 
-public abstract class Usuario implements CerrarCesion{
+public abstract class Usuario implements CerrarCesion, Serializable {
     private String nombre;
     private String contraseña;
     private String correo;

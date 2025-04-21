@@ -1,8 +1,9 @@
 package Modelos;
 
 import javax.swing.*;
+import java.io.Serializable;
 
-public class RecompensasDeProyecto {
+public class RecompensasDeProyecto implements Serializable {
     private String idDeRecompensa;
     private String descripcionDeRecompensas;
     private int cantidadDeRecompensa;
