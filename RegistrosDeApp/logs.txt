@@ -1,196 +1,33 @@
-
- inicio de sesion realizado por Andres el cuel es Administrador
-
- la fecha inicio de sesion fue 2025-04-21T19:10:54.528110300
+ inicio de sesion realizado por Sergi el cuel es Gestor
  inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T21:11:35.306878100
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=40.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:12:22.685396800
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=23.0, fechaDeInversion=1203-12-21, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:12:40.127687700
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T21:12:44.504124300
+ inicio de sesion realizado por Sergi el cuel es Gestor
+ inicio de sesion realizado por Sergi el cuel es Gestor
  inicio de sesion realizado por Sergi el cuel es Gestor
 
- la fecha inicio de sesion fue 2025-04-21T21:13:02.568399
- inicio de sesion realizado por Marcos el cuel es Inversor
 
- la fecha inicio de sesion fue 2025-04-21T21:19:31.318049
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:19:45.503320900
- inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T21:20:52.713205400
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:21:04.581886900
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=24.0, fechaDeInversion=1000-12-23, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:21:16.926496900
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T21:21:19.619166800
  inicio de sesion realizado por Sergi el cuel es Gestor
 
- la fecha inicio de sesion fue 2025-04-21T21:21:35.968151200
  inicio de sesion realizado por Marcos el cuel es Inversor
 
- la fecha inicio de sesion fue 2025-04-21T21:27:40.339725300
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
 
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:28:09.522290200
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=24.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+ inicio de sesion realizado por Marcos el cuel es Inversor
 
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:28:18.096171200
- Se produjo un sierre de secion 
+ inicio de sesion realizado por Marcos el cuel es Inversor
 
- la fecha en la que se serro la sesion fue 2025-04-21T21:28:19.978918100
+
+
  inicio de sesion realizado por Sergi el cuel es Gestor
 
- la fecha inicio de sesion fue 2025-04-21T21:28:49.527422500
- inicio de sesion realizado por Marcos el cuel es Inversor
 
- la fecha inicio de sesion fue 2025-04-21T21:31:03.524687700
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
 
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:31:10.087337900
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T21:31:11.381242900
  inicio de sesion realizado por Sergi el cuel es Gestor
 
- la fecha inicio de sesion fue 2025-04-21T21:31:28.376657600
- inicio de sesion realizado por Marcos el cuel es Inversor
 
- la fecha inicio de sesion fue 2025-04-21T21:34:31.633410
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
 
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:34:53.455252600
+
+
  Se produjo un sierre de secion 
 
- la fecha en la que se serro la sesion fue 2025-04-21T21:34:55.983413
- inicio de sesion realizado por Sergi el cuel es Gestor
 
- la fecha inicio de sesion fue 2025-04-21T21:35:17.097102600
- inicio de sesion realizado por Marcos el cuel es Inversor
 
- la fecha inicio de sesion fue 2025-04-21T21:42:09.766554300
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
 
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:42:28.509939600
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T21:42:32.120172400
- inicio de sesion realizado por Sergi el cuel es Gestor
-
- la fecha inicio de sesion fue 2025-04-21T21:42:46.901290400
- inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T21:54:49.476620100
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=15.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T21:54:57.441938800
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T21:54:58.898451100
- inicio de sesion realizado por Sergi el cuel es Gestor
-
- la fecha inicio de sesion fue 2025-04-21T21:55:22.739222
- inicio de sesion realizado por Sergi el cuel es Gestor
-
- la fecha inicio de sesion fue 2025-04-21T21:59:33.049415
- inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:00:45.347852800
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=13.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:00:57.516757800
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T22:00:59.651177900
- inicio de sesion realizado por Sergi el cuel es Gestor
-
- la fecha inicio de sesion fue 2025-04-21T22:01:17.603708300
- inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:21:40.170253200
- inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:22:32.538105100
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:22:45.599175900
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=12.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:23:00.976793300
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T22:23:28.849292900
- inicio de sesion realizado por pepe2 el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:25:00.231880300
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=17.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es pepe2, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario pepe2
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:25:20.437717200
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T22:25:26.624669200
- inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:33:31.431733200
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:33:41.986979500
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T22:33:45.294460400
- inicio de sesion realizado por Pepe el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:34:13.636933300
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=17.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Pepe, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Pepe
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:34:25.895461
- inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:36:04.607771900
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:36:14.602850700
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T22:36:28.240879100
- inicio de sesion realizado por Sergi el cuel es Gestor
-
- la fecha inicio de sesion fue 2025-04-21T22:37:03.055451100
- inicio de sesion realizado por pepe el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:37:21.967022700
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=12.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es pepe, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario pepe
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:37:40.778011800
- inicio de sesion realizado por pepe el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:39:15.412166
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es pepe, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario pepe
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:39:25.958400800
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T22:39:28.982448600
- inicio de sesion realizado por Marcos el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:39:44.732612900
- Se ha producido una nueva invercin la cual es Inversion{proyecto=da, cantidadInvertida=12.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
-
- la fecha en la que se elimino el proyecto fue 2025-04-21T22:39:59.639170600
- Se produjo un sierre de secion 
-
- la fecha en la que se serro la sesion fue 2025-04-21T22:40:40.657362600
- inicio de sesion realizado por pepe el cuel es Inversor
-
- la fecha inicio de sesion fue 2025-04-21T22:41:00.120837500

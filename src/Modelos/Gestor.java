@@ -1,8 +1,9 @@
 package Modelos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Gestor extends Usuario{
+public class Gestor extends Usuario implements Serializable {
 
     private boolean usuarioBloqueado;
     private ArrayList<Proyecto> proyectosCreados;

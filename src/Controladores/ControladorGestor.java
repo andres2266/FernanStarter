@@ -5,11 +5,12 @@ import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaGestor;
-import Vistas.VistaProyecto;
 
+
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ControladorGestor {
+public class ControladorGestor  implements Serializable {
     private GestorDeUsuarios gestorDeUsuarios;
     private VistaGestor vistaGestor;
     private GestorDeProyecto gestorDeProyecto;
@@ -52,11 +53,6 @@ public class ControladorGestor {
 
     public void mostrarInversionistasOrdenadoPorImporte(String idProyecto){
         vistaGestor.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorImporte(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
-    }
-
-    public void enviarCorreoConExcel(String idProyecto, String nombreInversor){
-        FuncionesDeCorreo correo = new FuncionesDeCorreo();
-        correo.exportarInversionesExcel(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas(), nombreInversor);
     }
 
     public void mostrarGraficoBarras(String idProyecto){

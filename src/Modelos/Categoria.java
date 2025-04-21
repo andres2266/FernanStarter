@@ -1,5 +1,7 @@
 package Modelos;
 
-public enum Categoria {
+import java.io.Serializable;
+
+public enum Categoria implements Serializable {
     Arte,Tecnología,Cine,Música,Juegos,Comida,Moda
 }
