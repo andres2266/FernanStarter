@@ -54,6 +54,11 @@ public class ControladorGestor {
         vistaGestor.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorImporte(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
     }
 
+    public void enviarCorreoConExcel(String idProyecto, String nombreInversor){
+        FuncionesDeCorreo correo = new FuncionesDeCorreo();
+        correo.exportarInversionesExcel(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas(), nombreInversor);
+    }
+
     public void mostrarGraficoBarras(String idProyecto){
         vistaGestor.mostrarGraficoBarras(gestorDeProyecto.contarGraficoBarras(gestorDeProyecto.buscarProyecto(idProyecto)));
     }

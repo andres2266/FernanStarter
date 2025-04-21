@@ -1,23 +1,39 @@
 package Modelos;
 
+import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaPreferencias;
+
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
 public class Preferencias {
     private final String archivo = "RegistrosDeApp/.properties";
     private Properties props = new Properties();
     VistaPreferencias vistaPreferencias =new VistaPreferencias();
+    GestorDeUsuarios gestorDeUsuarios = new GestorDeUsuarios();
 
     public Preferencias(){
         try{
             FileReader f = new FileReader(archivo);
             props.load(f);
             f.close();
+        }catch (IOException e){
+            vistaPreferencias.mensajeErrorArchivoCargado();
+        }
+    }
+
+    public void getUltimoInicioSesionTodos(){
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(archivo));
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (!(linea.contains("#") || linea.contains("invitado"))) System.out.println(linea);
+            }
+            br.close();
         }catch (IOException e){
             vistaPreferencias.mensajeErrorArchivoCargado();
         }
@@ -40,7 +56,6 @@ public class Preferencias {
         if (activarONo.equals("si")) props.setProperty(invitado,"si");
         else props.setProperty(invitado,"no");
     }
-
 
     public void guardar() {
         try (FileOutputStream fos = new FileOutputStream(archivo)) {

@@ -32,7 +32,7 @@ public class FernanStarter {
         System.out.println(gestorPorDefecto);
 
 
-        /*Bufer para escribir el los registros del programa*/
+        /*Buffer para escribir en los registros del programa*/
 
 
         VistaAdministrador vistaAdministrador = new VistaAdministrador();
