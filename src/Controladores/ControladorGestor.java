@@ -6,6 +6,7 @@ import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaGestor;
+import Vistas.VistaProyecto;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -53,6 +54,10 @@ public class ControladorGestor {
 
     public void mostrarInversionistasOrdenadoPorImporte(String idProyecto){
         vistaGestor.mostrarInversiones(gestorDeProyecto.ordenarInversionesPorImporte(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas()));
+    }
+
+    public void mostrarGraficoBarras(String idProyecto){
+        vistaGestor.mostrarGraficoBarras(gestorDeProyecto.contarGraficoBarras(gestorDeProyecto.buscarProyecto(idProyecto)));
     }
 
     public Proyecto BuscarProyecto(String idProyecto,String nombreDeUsuario){

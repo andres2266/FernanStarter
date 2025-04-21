@@ -146,6 +146,7 @@ public class FernanStarter {
                         }
 
                     }
+                    opcionesDeAdmin=0;
                     break;
                 case 2:
                     do {
@@ -217,14 +218,14 @@ public class FernanStarter {
                                 controladorGestor.crearProyecto(nombre,descripcion,Categoria.valueOf(categoria),cantidadNecesaria,cantidadFinanciada,fechaInicio,fechaDeFin,id,nombreDeUsuarioGestor);
                                 break;
                             case 3:
-                                System.out.println("Escribe tu nombre de usuario");
-                                String nombreUsuario=S.next();
-                                controladorGestor.verProyectos(nombreUsuario);
-                                break;
-                            case 4:
                                 System.out.println("Escribe id de proyecto que quieres eliminar");
                                 String proyectoId = S.next();
                                 controladorGestor.eliminarProyecto(proyectoId,nombreDeUsuarioGestor);
+                                break;
+                            case 4:
+                                System.out.println("Escribe id de proyecto que quieres mostrar la grafica");
+                                String idProyect = S.next();
+                                controladorGestor.mostrarGraficoBarras(idProyect);
                                 break;
                             case 5:
                                 System.out.println("Escribe tu nuevo nombre de usuario");
@@ -237,7 +238,7 @@ public class FernanStarter {
                             case 6 :
                                 System.out.println("Escribe el id del proyecto que buscas");
                                 String idDeProyectoBuscado = S.next();
-                                gestorDeProyecto.buscarProyecto(idDeProyectoBuscado);
+                                System.out.println(gestorDeProyecto.buscarProyecto(idDeProyectoBuscado));
                                 break;
                             case 7:
                                 System.out.println(" Escribe el id de la recompensa ");

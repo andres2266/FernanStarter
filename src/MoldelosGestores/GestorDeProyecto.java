@@ -2,6 +2,7 @@ package MoldelosGestores;
 
 import Inversión.Inversion;
 import Modelos.Proyecto;
+import Vistas.VistaProyecto;
 
 
 import java.util.ArrayList;
@@ -36,6 +37,13 @@ public class GestorDeProyecto {
             }
         }
         return null;
+    }
+
+    public int contarGraficoBarras(Proyecto proyecto) {
+
+        int graficoBarras = (int) ((proyecto.getCantidadFinanciada() * 100) / proyecto.getCantidadNecesaria());
+        return graficoBarras;
+
     }
 
     public void ordenarPorImporteFinanciado(ArrayList<Proyecto> proyecrtos){

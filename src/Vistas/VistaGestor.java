@@ -109,4 +109,17 @@ public class VistaGestor implements Credenciales {
     public void mostrarInversiones(ArrayList<Inversion> Inversiones){
         for (Inversion inv: Inversiones) System.out.println(inv.getInversor().getNombre()+": "+ inv.getCantidadInvertida());
     }
+
+    public void mostrarGraficoBarras(int graficoBarras){
+
+        System.out.print("[");
+        for (int x = 0; x < graficoBarras; x++) {
+            System.out.print("▓");
+        }
+        for (int y = 0; y < (100 - graficoBarras); y++) {
+            System.out.print("░");
+        }
+        System.out.print("]" + graficoBarras + "%");
+        System.out.println();
+    }
 }
