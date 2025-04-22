@@ -1,10 +1,8 @@
 package Modelos;
 
 import Vistas.VistaPreferencias;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Serializable;
+
+import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
@@ -49,6 +47,18 @@ public class Preferencias implements Serializable {
             vistaPreferencias.mensajeBienArchivoGuardado();
         } catch (IOException e) {
             vistaPreferencias.mensajeErrorArchivoGuardado();
+        }
+    }
+    public void getUltimoInicioSesionTodos(){
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(archivo));
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (!(linea.contains("#") || linea.contains("invitado"))) System.out.println(linea);
+            }
+            br.close();
+        }catch (IOException e){
+            vistaPreferencias.mensajeErrorArchivoCargado();
         }
     }
 }

@@ -43,6 +43,10 @@ public class ControladorGestor  implements Serializable {
         vistaGestor.mensajeMostrarProyectos(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
         vistaGestor.mostrarProyectoDeGestor(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectos());
     }
+    public void enviarCorreoConExcel(String idProyecto, String nombreInversor){
+        FuncionesDeCorreo correo = new FuncionesDeCorreo();
+        correo.exportarInversionesExcel(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas(), nombreInversor);
+    }
     public void ordenarProyectoPorImporteRealizado(String nombreDeUsuario){
        gestorDeProyecto.ordenarPorImporteFinanciado(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectosDeGestor());
         vistaGestor.mensajeDeOrdenacionPorFinanciacion();

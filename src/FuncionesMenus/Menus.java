@@ -104,6 +104,20 @@ public class Menus implements Serializable {
 
     }
 
+    public static int menuAdminOpcionesProperties(){
+        int opcion=0;
+        Scanner S = new Scanner(System.in);
+        System.out.println("1: Habilitacion de usuario invitado");
+        System.out.println("2: Mostrar ultimas conexiones de todos los usuarios");
+        opcion = S.nextInt();
+        return opcion;
+    }
+
+    public static String menuAdminHabilitacionInvitado(){
+        Scanner S = new Scanner(System.in);
+        System.out.println("Habilitación de usuario invitado: (si o no)");
+        return S.next();
+    }
 
 
 }

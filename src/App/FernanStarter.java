@@ -31,7 +31,7 @@ public class FernanStarter implements Serializable {
 
         Proyecto proyectoPrueba = new Proyecto("da", "da", Categoria.Arte, 100, 1, LocalDate.of(2000, 10, 1), LocalDate.of(2000, 10, 1), "1");
 
-        System.out.println(gestorPorDefecto);
+
 
 
         /*Bufer para escribir el los registros del programa*/
@@ -141,10 +141,14 @@ public class FernanStarter implements Serializable {
                                     controladorAdministrador.mostrarInversionistasOrdenadoPorImporte(idProyecto);
                                     break;
                                 case 10:
-                                    System.out.println("Habilitación de usuario invitado: (si o no)");
-                                    String opcion = S.next();
-                                    preps.setSinLoguear(opcion);
-                                    preps.guardar();
+                                    int opcionProperties = menuAdminOpcionesProperties();
+                                    switch (opcionProperties) {
+                                        case 1 -> {
+                                            preps.setSinLoguear(menuAdminHabilitacionInvitado());
+                                            preps.guardar();
+                                        }
+                                        case 2 -> preps.getUltimoInicioSesionTodos();
+                                    }
                                     break;
                             }
                         }
@@ -179,38 +183,37 @@ public class FernanStarter implements Serializable {
                             System.out.println(preps.getUltimoInicioSesion(nombreDeUsuarioGestor));
                             preps.setUltimoInicioSesion(nombreDeUsuarioGestor);
                             preps.guardar();
-                                logs.RegistroDeInicioDeSesion(nombreDeUsuarioGestor, "Gestor");
-                                while (opcionesDeGestor != 14) {
-                                    switch (opcionesDeGestor = muenuGestor()) {
-                                        case 1:
-                                            controladorGestor.verProyectos(nombreDeUsuarioGestor);
-                                            break;
-                                        case 2:
-                                            System.out.println("Escribe el id del proyecto");
-                                            String id = S.next();
-                                            System.out.println("Escribe el nombre del proyecto:");
-                                            String nombre = S.next();
+                            logs.RegistroDeInicioDeSesion(nombreDeUsuarioGestor, "Gestor");
+                            while (opcionesDeGestor != 14) {
+                                switch (opcionesDeGestor = muenuGestor()) {
+                                    case 1:
+                                        controladorGestor.verProyectos(nombreDeUsuarioGestor);
+                                        break;
+                                    case 2:
+                                        System.out.println("Escribe el id del proyecto");
+                                        String id = S.next();
+                                        System.out.println("Escribe el nombre del proyecto:");
+                                        String nombre = S.next();
 
-                                            System.out.println("Escribe la descripción del proyecto:");
-                                            String descripcion = S.next();
+                                        System.out.println("Escribe la descripción del proyecto:");
+                                        String descripcion = S.next();
 
-                                            System.out.println("Escribe la categoría");
-                                            String categoria = S.next();
+                                        System.out.println("Escribe la categoría");
+                                        String categoria = S.next();
 
+                                        System.out.println("Escribe la cantidad necesaria:");
+                                        int cantidadNecesaria = S.nextInt();
 
-                                            System.out.println("Escribe la cantidad necesaria:");
-                                            int cantidadNecesaria = S.nextInt();
+                                        System.out.println("Escribe la cantidad financiada:");
+                                        int cantidadFinanciada = S.nextInt();
 
-                                            System.out.println("Escribe la cantidad financiada:");
-                                            int cantidadFinanciada = S.nextInt();
-
-                                            System.out.println("Escribe el año de apertura:");
-                                            int año = S.nextInt();
-                                            System.out.println("Escribe el mes de apertura:");
-                                            int mes = S.nextInt();
-                                            System.out.println("Escribe el día de apertura:");
-                                            int dia = S.nextInt();
-                                            LocalDate fechaInicio = LocalDate.of(año, mes, dia);
+                                        System.out.println("Escribe el año de apertura:");
+                                        int año = S.nextInt();
+                                        System.out.println("Escribe el mes de apertura:");
+                                        int mes = S.nextInt();
+                                        System.out.println("Escribe el día de apertura:");
+                                        int dia = S.nextInt();
+                                        LocalDate fechaInicio = LocalDate.of(año, mes, dia);
 
                                             System.out.println("Escribe el año de fin:");
                                             int yearFin = S.nextInt();
@@ -362,7 +365,7 @@ public class FernanStarter implements Serializable {
                                     System.out.println(preps.getUltimoInicioSesion(nombreDeUsuarioInversor));
                                     preps.setUltimoInicioSesion(nombreDeUsuarioInversor);
                                     preps.guardar();
-                                    while (opcionesInversor != 10) {
+                                    while (opcionesInversor != 11) {
                                         switch (opcionesInversor = muenuInversor()) {
                                             case 1:
                                                 controladorInversor.misInversiones(nombreDeUsuarioInversor);
@@ -415,6 +418,11 @@ public class FernanStarter implements Serializable {
                                                 controladorInversor.invertir(nombreDeUsuarioInversor, gestorDeProyecto.buscarProyecto(proyecto), inversion, fechaIversion);
                                                 logs.RegistroDeInversion(controladorInversor.verInvercionesRealizadas(nombreDeUsuarioInversor).toString(), nombreDeUsuarioInversor);
                                                 break;
+                                            case 10:
+                                                System.out.println("Escribe el id del Proyecto que quieras recibir tus inversiones: ");
+                                                String idProyecto = S.next();
+                                                controladorGestor.enviarCorreoConExcel(idProyecto,nombreDeUsuarioInversor);
+                                                break;
                                         }
                                     }
                                     persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
@@ -454,9 +462,7 @@ public class FernanStarter implements Serializable {
                                         int opcion = 0;
                                         do {
                                             opcion = menuInvitado();
-                                            switch (opcion) {
-                                                case 1 -> controladorDeProyecto.verTodosLosProyectos();
-                                            }
+                                            if (opcion == 1) controladorDeProyecto.verTodosLosProyectos();
                                         } while (opcion != 2);
                                     }
                                     break;
