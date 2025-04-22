@@ -5,15 +5,15 @@ import Modelos.Amigo;
 import Modelos.Inversor;
 import Modelos.Proyecto;
 import Modelos.Usuario;
+import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaInversor;
-
-import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ControladorInversor implements Serializable {
+public class ControladorInversor {
     private GestorDeUsuarios gestorDeUsuarios;
     private VistaInversor vistaInversor;
+    GestorDeProyecto gestorDeProyecto;
 
     public ControladorInversor(GestorDeUsuarios gestoDeUsuarios, VistaInversor vistaInversor) {
         this.gestorDeUsuarios = gestoDeUsuarios;

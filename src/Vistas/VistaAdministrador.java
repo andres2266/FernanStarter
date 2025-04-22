@@ -2,11 +2,10 @@ package Vistas;
 
 import Inversión.Inversion;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class VistaAdministrador implements Credenciales, Serializable {
+public class VistaAdministrador implements Credenciales{
     Scanner S = new Scanner(System.in);
 
 

@@ -1,8 +1,5 @@
 package Modelos;
-
-import java.io.Serializable;
-
-public class Amigo implements Serializable {
+public class Amigo {
     private String nombre;
     private String correo;
 

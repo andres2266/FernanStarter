@@ -1,11 +1,10 @@
 package FuncionesMenus;
 
-import java.io.Serializable;
 import java.util.Scanner;
 
-public class Menus implements Serializable {
+public class Menus {
 
-    public static int menuPrincipal()  {
+    public static int menuPrincipal() {
         Scanner S = new Scanner(System.in);
         System.out.println("Cómo quieres acceder al sistema?");
         System.out.println("1. Administrador");
@@ -28,7 +27,7 @@ public class Menus implements Serializable {
         System.out.println("7: Ordenar todos los proyectos por fecha");
         System.out.println("8: Ordenar Inversionistas por Nombre según el proyecto");
         System.out.println("9: Ordenar Inversionistas por Importe según el proyecto");
-        System.out.println("10: Habilitacion de usuario invitado");
+        System.out.println("10: Menu de opciones de uso archivo .properties");
         System.out.println("11: Cerrar sesión");
         int opcion = Integer.parseInt(S.next());
         return opcion;
@@ -67,7 +66,8 @@ public class Menus implements Serializable {
         System.out.println("7: Añadir amigos");
         System.out.println("8: Cambiar credenciales");
         System.out.println("9: Invertir");
-        System.out.println("10: Salir");
+        System.out.println("10: Enviar Gmail de tus inversiones");
+        System.out.println("11: Salir");
         int opcion = S.nextInt();
         return opcion;
     }
@@ -89,22 +89,31 @@ public class Menus implements Serializable {
         System.out.println("2: Crear Inversor");
         int opcion = S.nextInt();
         return opcion;
-
     }
 
     public static int menuInvitado() {
         int opcion=0;
-        do {
         Scanner S = new Scanner(System.in);
         System.out.println("1: Ver proyectos");
         System.out.println("2: Salir");
         opcion = S.nextInt();
             return opcion;
-        }while (opcion!=2);
-
     }
 
+    public static int menuAdminOpcionesProperties(){
+        int opcion=0;
+        Scanner S = new Scanner(System.in);
+        System.out.println("1: Habilitacion de usuario invitado");
+        System.out.println("2: Mostrar ultimas conexiones de todos los usuarios");
+        opcion = S.nextInt();
+        return opcion;
+    }
 
+    public static String menuAdminHabilitacionInvitado(){
+        Scanner S = new Scanner(System.in);
+        System.out.println("Habilitación de usuario invitado: (si o no)");
+        return S.next();
+    }
 
 }
 

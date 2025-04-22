@@ -1,8 +1,6 @@
 package Modelos;
 
-import java.io.Serializable;
-
-public class Administrador extends Usuario implements Serializable {
+public class Administrador extends Usuario{
 
     public Administrador(String nombre , String correo, String contraseña) {
         super(nombre, correo,contraseña);

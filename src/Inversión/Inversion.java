@@ -3,10 +3,9 @@ package Inversión;
 import Modelos.Inversor;
 import Modelos.Proyecto;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Inversion implements Serializable {
+public class Inversion {
     private Proyecto proyecto1;
     private float cantidadInvertida;
     private LocalDate fechaDeInversion;
@@ -19,8 +18,8 @@ public class Inversion implements Serializable {
         this.inversor = inversor;
     }
 
-    public float getCantidadInvertida() {
-        return cantidadInvertida;
+    public int getCantidadInvertida() {
+        return (int)cantidadInvertida;
     }
 
     public Proyecto getProyecto1() {
@@ -34,7 +33,7 @@ public class Inversion implements Serializable {
     @Override
     public String toString() {
         return "Inversion{" +
-                "proyecto=" + proyecto1 +
+                "proyecto=" + proyecto1.getNombre() +
                 ", cantidadInvertida=" + cantidadInvertida +
                 ", fechaDeInversion=" + fechaDeInversion +
                 ", inversor=" + inversor +

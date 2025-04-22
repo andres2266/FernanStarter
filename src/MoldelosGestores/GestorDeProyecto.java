@@ -5,11 +5,10 @@ import Modelos.Proyecto;
 import Vistas.VistaProyecto;
 
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class GestorDeProyecto implements Serializable {
+public class GestorDeProyecto {
     ArrayList<Proyecto>gestorProyecto;
 
     public GestorDeProyecto (){
@@ -19,10 +18,6 @@ public class GestorDeProyecto implements Serializable {
     public boolean añadirProyecto(Proyecto proyecto){
         gestorProyecto.add(proyecto);
         return true;
-    }
-
-    public void setGestorProyecto(ArrayList<Proyecto> gestorProyecto) {
-        this.gestorProyecto = gestorProyecto;
     }
 
     public boolean eliminarProyecto(String id){
